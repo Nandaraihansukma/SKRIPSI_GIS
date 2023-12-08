@@ -1,0 +1,68 @@
+ACEH
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+SUMATERA UTARA
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+SUMATERA BARAT
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+RIAU
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+JAMBI
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+SUMATERA SELATAN
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+BENGKULU
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+LAMPUNG
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+KEPULAUAN BANGKA BELITUNG
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+KEPULAUAN RIAU
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+DKI JAKARTA
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+JAWA BARAT
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+JAWA TENGAH
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+DAERAH ISTIMEWA YOGYAKARTA
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+JAWA TIMUR
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+BANTEN
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+BALI
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+NUSA TENGGARA BARAT
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+NUSA TENGGARA TIMUR
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+KALIMANTAN BARAT
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+KALIMANTAN TENGAH
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+KALIMANTAN SELATAN
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+KALIMANTAN TIMUR
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+KALIMANTAN UTARA
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+SULAWESI UTARA
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+SULAWESI TENGAH
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+SULAWESI SELATAN
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+SULAWESI TENGGARA
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+GORONTALO
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+SULAWESI BARAT
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+MALUKU
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+MALUKU UTARA
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+PAPUA BARAT
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+PAPUA
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]

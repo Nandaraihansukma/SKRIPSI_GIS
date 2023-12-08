@@ -1,0 +1,1906 @@
+[
+ {
+   "tahun": 2013,
+   "provinsi": "ACEH",
+   "kawasan_hutan": 3363.9,
+   "bukan_kawasan_hutan": 4284.2,
+   "total_deforestasi": 7648.1
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "SUMATERA UTARA",
+   "kawasan_hutan": 4675.2,
+   "bukan_kawasan_hutan": 1465.3,
+   "total_deforestasi": 6140.5
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "SUMATERA BARAT",
+   "kawasan_hutan": 3330.3,
+   "bukan_kawasan_hutan": 1725.7,
+   "total_deforestasi": 5056
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "RIAU",
+   "kawasan_hutan": 180786.5,
+   "bukan_kawasan_hutan": 21152.9,
+   "total_deforestasi": 201939.4
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "JAMBI",
+   "kawasan_hutan": -12809.6,
+   "bukan_kawasan_hutan": 2868.1,
+   "total_deforestasi": -9941.5
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "SUMATERA SELATAN",
+   "kawasan_hutan": 2853.5,
+   "bukan_kawasan_hutan": 673.7,
+   "total_deforestasi": 3527.2
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "BENGKULU",
+   "kawasan_hutan": 12106.8,
+   "bukan_kawasan_hutan": -37.4,
+   "total_deforestasi": 12069.4
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "LAMPUNG",
+   "kawasan_hutan": 197.8,
+   "bukan_kawasan_hutan": -33.9,
+   "total_deforestasi": 163.9
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "KEPULAUAN BANGKA BELITUNG",
+   "kawasan_hutan": 1209.7,
+   "bukan_kawasan_hutan": 489.7,
+   "total_deforestasi": 1699.4
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "KEPULAUAN RIAU",
+   "kawasan_hutan": 4.3,
+   "bukan_kawasan_hutan": 0.4,
+   "total_deforestasi": 4.6
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "DKI JAKARTA",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "JAWA BARAT",
+   "kawasan_hutan": -10979.5,
+   "bukan_kawasan_hutan": -3901,
+   "total_deforestasi": -14880.5
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "JAWA TENGAH",
+   "kawasan_hutan": -79.2,
+   "bukan_kawasan_hutan": -15.1,
+   "total_deforestasi": -94.3
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "DAERAH ISTIMEWA YOGYAKARTA",
+   "kawasan_hutan": 0.9,
+   "bukan_kawasan_hutan": 31.9,
+   "total_deforestasi": 32.8
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "JAWA TIMUR",
+   "kawasan_hutan": 5452.2,
+   "bukan_kawasan_hutan": 2044.9,
+   "total_deforestasi": 7497.1
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "BANTEN",
+   "kawasan_hutan": -237.3,
+   "bukan_kawasan_hutan": -28.7,
+   "total_deforestasi": -266.1
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "BALI",
+   "kawasan_hutan": 110,
+   "bukan_kawasan_hutan": 20.2,
+   "total_deforestasi": 130.2
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "NUSA TENGGARA BARAT",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "NUSA TENGGARA TIMUR",
+   "kawasan_hutan": 138.9,
+   "bukan_kawasan_hutan": -30,
+   "total_deforestasi": 108.8
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "KALIMANTAN BARAT",
+   "kawasan_hutan": 7872.8,
+   "bukan_kawasan_hutan": 22046.8,
+   "total_deforestasi": 29919.6
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "KALIMANTAN TENGAH",
+   "kawasan_hutan": 48370.7,
+   "bukan_kawasan_hutan": 10464.9,
+   "total_deforestasi": 58835.6
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "KALIMANTAN SELATAN",
+   "kawasan_hutan": 5191.9,
+   "bukan_kawasan_hutan": 1746.6,
+   "total_deforestasi": 6938.5
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "KALIMANTAN TIMUR",
+   "kawasan_hutan": 16610.8,
+   "bukan_kawasan_hutan": 21728.7,
+   "total_deforestasi": 38339.4
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "KALIMANTAN UTARA",
+   "kawasan_hutan": 16610.8,
+   "bukan_kawasan_hutan": 21728.7,
+   "total_deforestasi": 38339.4
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "SULAWESI UTARA",
+   "kawasan_hutan": 2249.8,
+   "bukan_kawasan_hutan": 1528.3,
+   "total_deforestasi": 3778.1
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "SULAWESI TENGAH",
+   "kawasan_hutan": 1880.1,
+   "bukan_kawasan_hutan": 2833.9,
+   "total_deforestasi": 4714
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "SULAWESI SELATAN",
+   "kawasan_hutan": 2461.6,
+   "bukan_kawasan_hutan": 892.3,
+   "total_deforestasi": 3354
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "SULAWESI TENGGARA",
+   "kawasan_hutan": 1485,
+   "bukan_kawasan_hutan": 883.3,
+   "total_deforestasi": 2368.3
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "GORONTALO",
+   "kawasan_hutan": 2228,
+   "bukan_kawasan_hutan": 358,
+   "total_deforestasi": 2586.1
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "SULAWESI BARAT",
+   "kawasan_hutan": 428.5,
+   "bukan_kawasan_hutan": 500.6,
+   "total_deforestasi": 929
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "MALUKU",
+   "kawasan_hutan": 589.5,
+   "bukan_kawasan_hutan": 322.7,
+   "total_deforestasi": 912.2
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "MALUKU UTARA",
+   "kawasan_hutan": 168.4,
+   "bukan_kawasan_hutan": 1400.7,
+   "total_deforestasi": 1569.1
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "PAPUA BARAT",
+   "kawasan_hutan": 1400.1,
+   "bukan_kawasan_hutan": 448.8,
+   "total_deforestasi": 1848.9
+ },
+ {
+   "tahun": 2013,
+   "provinsi": "PAPUA",
+   "kawasan_hutan": 11472.4,
+   "bukan_kawasan_hutan": 8970.6,
+   "total_deforestasi": 20443.1
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "ACEH",
+   "kawasan_hutan": -72.1,
+   "bukan_kawasan_hutan": 3303.5,
+   "total_deforestasi": 3231.5
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "SUMATERA UTARA",
+   "kawasan_hutan": 15450.3,
+   "bukan_kawasan_hutan": 5215.4,
+   "total_deforestasi": 20665.7
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "SUMATERA BARAT",
+   "kawasan_hutan": 8813.9,
+   "bukan_kawasan_hutan": 1685.1,
+   "total_deforestasi": 10498.9
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "RIAU",
+   "kawasan_hutan": 124314.6,
+   "bukan_kawasan_hutan": 11216.1,
+   "total_deforestasi": 135530.7
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "JAMBI",
+   "kawasan_hutan": 15422.4,
+   "bukan_kawasan_hutan": 1470.7,
+   "total_deforestasi": 16893.1
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "SUMATERA SELATAN",
+   "kawasan_hutan": 271032.8,
+   "bukan_kawasan_hutan": 19744.2,
+   "total_deforestasi": 290777
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "BENGKULU",
+   "kawasan_hutan": 2139.6,
+   "bukan_kawasan_hutan": 1993.5,
+   "total_deforestasi": 4133.1
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "LAMPUNG",
+   "kawasan_hutan": 12909.9,
+   "bukan_kawasan_hutan": 3790.3,
+   "total_deforestasi": 16700.2
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "KEPULAUAN BANGKA BELITUNG",
+   "kawasan_hutan": 13594.7,
+   "bukan_kawasan_hutan": 5697.7,
+   "total_deforestasi": 19292.3
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "KEPULAUAN RIAU",
+   "kawasan_hutan": 1191.5,
+   "bukan_kawasan_hutan": 130.4,
+   "total_deforestasi": 1322
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "DKI JAKARTA",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "JAWA BARAT",
+   "kawasan_hutan": 1750.5,
+   "bukan_kawasan_hutan": 4309.5,
+   "total_deforestasi": 6060
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "JAWA TENGAH",
+   "kawasan_hutan": 1589.5,
+   "bukan_kawasan_hutan": 3641.9,
+   "total_deforestasi": 5231.4
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "DAERAH ISTIMEWA YOGYAKARTA",
+   "kawasan_hutan": 51.8,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 51.8
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "JAWA TIMUR",
+   "kawasan_hutan": 3621,
+   "bukan_kawasan_hutan": 4128.1,
+   "total_deforestasi": 7749.2
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "BANTEN",
+   "kawasan_hutan": 1282.2,
+   "bukan_kawasan_hutan": 529.2,
+   "total_deforestasi": 1811.5
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "BALI",
+   "kawasan_hutan": 77.5,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 77.5
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "NUSA TENGGARA BARAT",
+   "kawasan_hutan": 8896.4,
+   "bukan_kawasan_hutan": 186.8,
+   "total_deforestasi": 9083.2
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "NUSA TENGGARA TIMUR",
+   "kawasan_hutan": 2962.7,
+   "bukan_kawasan_hutan": 10969.3,
+   "total_deforestasi": 13932
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "KALIMANTAN BARAT",
+   "kawasan_hutan": 5754,
+   "bukan_kawasan_hutan": 34723.2,
+   "total_deforestasi": 40477.2
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "KALIMANTAN TENGAH",
+   "kawasan_hutan": 163240,
+   "bukan_kawasan_hutan": 23402,
+   "total_deforestasi": 186642
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "KALIMANTAN SELATAN",
+   "kawasan_hutan": 34631.5,
+   "bukan_kawasan_hutan": 12072.3,
+   "total_deforestasi": 46703.8
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "KALIMANTAN TIMUR",
+   "kawasan_hutan": 36403.9,
+   "bukan_kawasan_hutan": 64526.9,
+   "total_deforestasi": 100930.8
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "KALIMANTAN UTARA",
+   "kawasan_hutan": 36403.9,
+   "bukan_kawasan_hutan": 64526.9,
+   "total_deforestasi": 100930.8
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "SULAWESI UTARA",
+   "kawasan_hutan": 795.1,
+   "bukan_kawasan_hutan": 512.5,
+   "total_deforestasi": 1307.5
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "SULAWESI TENGAH",
+   "kawasan_hutan": 10546.3,
+   "bukan_kawasan_hutan": 10829.9,
+   "total_deforestasi": 21376.3
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "SULAWESI SELATAN",
+   "kawasan_hutan": 8765.8,
+   "bukan_kawasan_hutan": 1580.8,
+   "total_deforestasi": 10346.6
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "SULAWESI TENGGARA",
+   "kawasan_hutan": 5475.4,
+   "bukan_kawasan_hutan": 1641.2,
+   "total_deforestasi": 7116.7
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "GORONTALO",
+   "kawasan_hutan": 13146.6,
+   "bukan_kawasan_hutan": 1704.8,
+   "total_deforestasi": 14851.4
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "SULAWESI BARAT",
+   "kawasan_hutan": 1772,
+   "bukan_kawasan_hutan": 565.5,
+   "total_deforestasi": 2337.5
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "MALUKU",
+   "kawasan_hutan": 2870.2,
+   "bukan_kawasan_hutan": 2063.2,
+   "total_deforestasi": 4933.5
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "MALUKU UTARA",
+   "kawasan_hutan": 10321.6,
+   "bukan_kawasan_hutan": 1629.9,
+   "total_deforestasi": 11951.5
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "PAPUA BARAT",
+   "kawasan_hutan": 2696,
+   "bukan_kawasan_hutan": 9611.7,
+   "total_deforestasi": 12307.7
+ },
+ {
+   "tahun": 2014,
+   "provinsi": "PAPUA",
+   "kawasan_hutan": 34159.7,
+   "bukan_kawasan_hutan": 33698.2,
+   "total_deforestasi": 67857.9
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "ACEH",
+   "kawasan_hutan": 12523,
+   "bukan_kawasan_hutan": 10548.6,
+   "total_deforestasi": 23071.6
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "SUMATERA UTARA",
+   "kawasan_hutan": 7907.3,
+   "bukan_kawasan_hutan": 1807,
+   "total_deforestasi": 9714.3
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "SUMATERA BARAT",
+   "kawasan_hutan": 8199.1,
+   "bukan_kawasan_hutan": -381.4,
+   "total_deforestasi": 7817.8
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "RIAU",
+   "kawasan_hutan": 18365.4,
+   "bukan_kawasan_hutan": 5825.4,
+   "total_deforestasi": 24190.9
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "JAMBI",
+   "kawasan_hutan": 24263,
+   "bukan_kawasan_hutan": 558.4,
+   "total_deforestasi": 24821.4
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "SUMATERA SELATAN",
+   "kawasan_hutan": 3089.3,
+   "bukan_kawasan_hutan": 1204.8,
+   "total_deforestasi": 4294.2
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "BENGKULU",
+   "kawasan_hutan": 1493.5,
+   "bukan_kawasan_hutan": 305.2,
+   "total_deforestasi": 1798.8
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "LAMPUNG",
+   "kawasan_hutan": 1384.1,
+   "bukan_kawasan_hutan": -170.5,
+   "total_deforestasi": 1213.6
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "KEPULAUAN BANGKA BELITUNG",
+   "kawasan_hutan": 344.8,
+   "bukan_kawasan_hutan": 1347.5,
+   "total_deforestasi": 1692.3
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "KEPULAUAN RIAU",
+   "kawasan_hutan": 2651.4,
+   "bukan_kawasan_hutan": -1953.7,
+   "total_deforestasi": 697.7
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "DKI JAKARTA",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "JAWA BARAT",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "JAWA TENGAH",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "DAERAH ISTIMEWA YOGYAKARTA",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "JAWA TIMUR",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "BANTEN",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "BALI",
+   "kawasan_hutan": 4096,
+   "bukan_kawasan_hutan": 3359.5,
+   "total_deforestasi": 7455.5
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "NUSA TENGGARA BARAT",
+   "kawasan_hutan": 12561.9,
+   "bukan_kawasan_hutan": 9800.5,
+   "total_deforestasi": 22362.4
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "NUSA TENGGARA TIMUR",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "KALIMANTAN BARAT",
+   "kawasan_hutan": 60146.3,
+   "bukan_kawasan_hutan": 64809.7,
+   "total_deforestasi": 124956
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "KALIMANTAN TENGAH",
+   "kawasan_hutan": 88816.2,
+   "bukan_kawasan_hutan": 9313,
+   "total_deforestasi": 98129.2
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "KALIMANTAN SELATAN",
+   "kawasan_hutan": 26180.6,
+   "bukan_kawasan_hutan": 6944.6,
+   "total_deforestasi": 33125.1
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "KALIMANTAN TIMUR",
+   "kawasan_hutan": 57104.9,
+   "bukan_kawasan_hutan": 51577,
+   "total_deforestasi": 108682
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "KALIMANTAN UTARA",
+   "kawasan_hutan": 57104.9,
+   "bukan_kawasan_hutan": 51577,
+   "total_deforestasi": 108682
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "SULAWESI UTARA",
+   "kawasan_hutan": 1838.6,
+   "bukan_kawasan_hutan": 514,
+   "total_deforestasi": 2352.6
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "SULAWESI TENGAH",
+   "kawasan_hutan": 16045.5,
+   "bukan_kawasan_hutan": 10043.2,
+   "total_deforestasi": 26088.6
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "SULAWESI SELATAN",
+   "kawasan_hutan": 24738.8,
+   "bukan_kawasan_hutan": 5198.5,
+   "total_deforestasi": 29937.2
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "SULAWESI TENGGARA",
+   "kawasan_hutan": 12399,
+   "bukan_kawasan_hutan": 2966.1,
+   "total_deforestasi": 15365.2
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "GORONTALO",
+   "kawasan_hutan": 2074.8,
+   "bukan_kawasan_hutan": 167.7,
+   "total_deforestasi": 2242.5
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "SULAWESI BARAT",
+   "kawasan_hutan": 7289.5,
+   "bukan_kawasan_hutan": 2235.2,
+   "total_deforestasi": 9524.7
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "MALUKU",
+   "kawasan_hutan": 6803.9,
+   "bukan_kawasan_hutan": 96.5,
+   "total_deforestasi": 6900.5
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "MALUKU UTARA",
+   "kawasan_hutan": 22730.5,
+   "bukan_kawasan_hutan": 3061.7,
+   "total_deforestasi": 25792.2
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "PAPUA BARAT",
+   "kawasan_hutan": 6101.6,
+   "bukan_kawasan_hutan": 4119.5,
+   "total_deforestasi": 10221.1
+ },
+ {
+   "tahun": 2015,
+   "provinsi": "PAPUA",
+   "kawasan_hutan": 2117.2,
+   "bukan_kawasan_hutan": 4612.4,
+   "total_deforestasi": 6729.6
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "ACEH",
+   "kawasan_hutan": 11028.1,
+   "bukan_kawasan_hutan": 4487.6,
+   "total_deforestasi": 15515.7
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "SUMATERA UTARA",
+   "kawasan_hutan": 16853.8,
+   "bukan_kawasan_hutan": 5695.8,
+   "total_deforestasi": 22549.6
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "SUMATERA BARAT",
+   "kawasan_hutan": 6567.1,
+   "bukan_kawasan_hutan": 2112.9,
+   "total_deforestasi": 8680
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "RIAU",
+   "kawasan_hutan": 8120.6,
+   "bukan_kawasan_hutan": -1139,
+   "total_deforestasi": 6981.6
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "JAMBI",
+   "kawasan_hutan": 29987.1,
+   "bukan_kawasan_hutan": 2884.2,
+   "total_deforestasi": 32871.3
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "SUMATERA SELATAN",
+   "kawasan_hutan": 17437.9,
+   "bukan_kawasan_hutan": 4848.7,
+   "total_deforestasi": 22286.6
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "BENGKULU",
+   "kawasan_hutan": 3887.9,
+   "bukan_kawasan_hutan": 1203.5,
+   "total_deforestasi": 5091.5
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "LAMPUNG",
+   "kawasan_hutan": 2989.5,
+   "bukan_kawasan_hutan": 1430.8,
+   "total_deforestasi": 4420.3
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "KEPULAUAN BANGKA BELITUNG",
+   "kawasan_hutan": 1854,
+   "bukan_kawasan_hutan": 1327.8,
+   "total_deforestasi": 3181.7
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "KEPULAUAN RIAU",
+   "kawasan_hutan": 3173.7,
+   "bukan_kawasan_hutan": 2489.2,
+   "total_deforestasi": 5662.8
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "DKI JAKARTA",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": -0.8,
+   "total_deforestasi": -0.8
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "JAWA BARAT",
+   "kawasan_hutan": -160.6,
+   "bukan_kawasan_hutan": -27.4,
+   "total_deforestasi": -188
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "JAWA TENGAH",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "DAERAH ISTIMEWA YOGYAKARTA",
+   "kawasan_hutan": -163.8,
+   "bukan_kawasan_hutan": -106.5,
+   "total_deforestasi": -270.2
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "JAWA TIMUR",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "BANTEN",
+   "kawasan_hutan": -2534.4,
+   "bukan_kawasan_hutan": -2727.7,
+   "total_deforestasi": -5262.1
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "BALI",
+   "kawasan_hutan": -7.4,
+   "bukan_kawasan_hutan": 241.7,
+   "total_deforestasi": 234.2
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "NUSA TENGGARA BARAT",
+   "kawasan_hutan": -8915.4,
+   "bukan_kawasan_hutan": -5887.2,
+   "total_deforestasi": -14802.7
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "NUSA TENGGARA TIMUR",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "KALIMANTAN BARAT",
+   "kawasan_hutan": 13274.8,
+   "bukan_kawasan_hutan": 6022.1,
+   "total_deforestasi": 19296.9
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "KALIMANTAN TENGAH",
+   "kawasan_hutan": 97817,
+   "bukan_kawasan_hutan": 18965.8,
+   "total_deforestasi": 116782.8
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "KALIMANTAN SELATAN",
+   "kawasan_hutan": 661.3,
+   "bukan_kawasan_hutan": -1343.1,
+   "total_deforestasi": -681.8
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "KALIMANTAN TIMUR",
+   "kawasan_hutan": 20913.1,
+   "bukan_kawasan_hutan": 74068.7,
+   "total_deforestasi": 94981.8
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "KALIMANTAN UTARA",
+   "kawasan_hutan": 20913.1,
+   "bukan_kawasan_hutan": 74068.7,
+   "total_deforestasi": 94981.8
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "SULAWESI UTARA",
+   "kawasan_hutan": 440.9,
+   "bukan_kawasan_hutan": 164.5,
+   "total_deforestasi": 605.3
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "SULAWESI TENGAH",
+   "kawasan_hutan": 15679.3,
+   "bukan_kawasan_hutan": 28844.7,
+   "total_deforestasi": 44523.9
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "SULAWESI SELATAN",
+   "kawasan_hutan": 7070.3,
+   "bukan_kawasan_hutan": 2203.8,
+   "total_deforestasi": 9274.1
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "SULAWESI TENGGARA",
+   "kawasan_hutan": 13302.5,
+   "bukan_kawasan_hutan": 1653.8,
+   "total_deforestasi": 14956.3
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "GORONTALO",
+   "kawasan_hutan": -1169.5,
+   "bukan_kawasan_hutan": 1144.9,
+   "total_deforestasi": -24.6
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "SULAWESI BARAT",
+   "kawasan_hutan": 836.2,
+   "bukan_kawasan_hutan": 576.8,
+   "total_deforestasi": 1413
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "MALUKU",
+   "kawasan_hutan": -1128.9,
+   "bukan_kawasan_hutan": 2539.3,
+   "total_deforestasi": 1410.5
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "MALUKU UTARA",
+   "kawasan_hutan": 17732.6,
+   "bukan_kawasan_hutan": 4300.7,
+   "total_deforestasi": 22033.2
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "PAPUA BARAT",
+   "kawasan_hutan": 21081.2,
+   "bukan_kawasan_hutan": 10147.5,
+   "total_deforestasi": 31228.7
+ },
+ {
+   "tahun": 2016,
+   "provinsi": "PAPUA",
+   "kawasan_hutan": 554.5,
+   "bukan_kawasan_hutan": 16704.6,
+   "total_deforestasi": 17259.1
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "ACEH",
+   "kawasan_hutan": 3216.4,
+   "bukan_kawasan_hutan": 4285.8,
+   "total_deforestasi": 7502.2
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "SUMATERA UTARA",
+   "kawasan_hutan": 4255.7,
+   "bukan_kawasan_hutan": 3063.4,
+   "total_deforestasi": 7319.1
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "SUMATERA BARAT",
+   "kawasan_hutan": 3824.1,
+   "bukan_kawasan_hutan": 1689.9,
+   "total_deforestasi": 5514
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "RIAU",
+   "kawasan_hutan": 23672.3,
+   "bukan_kawasan_hutan": 20042.5,
+   "total_deforestasi": 43714.8
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "JAMBI",
+   "kawasan_hutan": 5994.4,
+   "bukan_kawasan_hutan": 3241.2,
+   "total_deforestasi": 9235.6
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "SUMATERA SELATAN",
+   "kawasan_hutan": 3619.4,
+   "bukan_kawasan_hutan": 121.6,
+   "total_deforestasi": 3741
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "BENGKULU",
+   "kawasan_hutan": 7064,
+   "bukan_kawasan_hutan": 642.4,
+   "total_deforestasi": 7706.4
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "LAMPUNG",
+   "kawasan_hutan": 1104.7,
+   "bukan_kawasan_hutan": 253.8,
+   "total_deforestasi": 1358.5
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "KEPULAUAN BANGKA BELITUNG",
+   "kawasan_hutan": 3559.1,
+   "bukan_kawasan_hutan": 186.7,
+   "total_deforestasi": 3745.8
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "KEPULAUAN RIAU",
+   "kawasan_hutan": 503.9,
+   "bukan_kawasan_hutan": -646.4,
+   "total_deforestasi": -142.5
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "DKI JAKARTA",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "JAWA BARAT",
+   "kawasan_hutan": 2598.9,
+   "bukan_kawasan_hutan": 3789.6,
+   "total_deforestasi": 6388.5
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "JAWA TENGAH",
+   "kawasan_hutan": 2004.7,
+   "bukan_kawasan_hutan": 1110.8,
+   "total_deforestasi": 3115.6
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "DAERAH ISTIMEWA YOGYAKARTA",
+   "kawasan_hutan": 2.4,
+   "bukan_kawasan_hutan": 587.4,
+   "total_deforestasi": 589.8
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "JAWA TIMUR",
+   "kawasan_hutan": 3298.6,
+   "bukan_kawasan_hutan": 5511.7,
+   "total_deforestasi": 8810.3
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "BANTEN",
+   "kawasan_hutan": -523.6,
+   "bukan_kawasan_hutan": 240.6,
+   "total_deforestasi": -283.1
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "BALI",
+   "kawasan_hutan": 99.5,
+   "bukan_kawasan_hutan": 177.4,
+   "total_deforestasi": 276.9
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "NUSA TENGGARA BARAT",
+   "kawasan_hutan": 7065.6,
+   "bukan_kawasan_hutan": 3170.7,
+   "total_deforestasi": 10236.4
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "NUSA TENGGARA TIMUR",
+   "kawasan_hutan": 6037.1,
+   "bukan_kawasan_hutan": 11652.9,
+   "total_deforestasi": 17689.9
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "KALIMANTAN BARAT",
+   "kawasan_hutan": 13157.7,
+   "bukan_kawasan_hutan": 29133.7,
+   "total_deforestasi": 42291.4
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "KALIMANTAN TENGAH",
+   "kawasan_hutan": 20234.7,
+   "bukan_kawasan_hutan": 7005.6,
+   "total_deforestasi": 27240.3
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "KALIMANTAN SELATAN",
+   "kawasan_hutan": 5396,
+   "bukan_kawasan_hutan": 8972.6,
+   "total_deforestasi": 14368.6
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "KALIMANTAN TIMUR",
+   "kawasan_hutan": 26808,
+   "bukan_kawasan_hutan": 38386.2,
+   "total_deforestasi": 65194.2
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "KALIMANTAN UTARA",
+   "kawasan_hutan": 26808,
+   "bukan_kawasan_hutan": 38386.2,
+   "total_deforestasi": 65194.2
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "SULAWESI UTARA",
+   "kawasan_hutan": 3135,
+   "bukan_kawasan_hutan": 767.6,
+   "total_deforestasi": 3902.6
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "SULAWESI TENGAH",
+   "kawasan_hutan": 11522.7,
+   "bukan_kawasan_hutan": 10424.6,
+   "total_deforestasi": 21947.3
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "SULAWESI SELATAN",
+   "kawasan_hutan": 2528.3,
+   "bukan_kawasan_hutan": 1070,
+   "total_deforestasi": 3598.2
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "SULAWESI TENGGARA",
+   "kawasan_hutan": 20382.1,
+   "bukan_kawasan_hutan": 10451.8,
+   "total_deforestasi": 30834
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "GORONTALO",
+   "kawasan_hutan": -837,
+   "bukan_kawasan_hutan": 497.4,
+   "total_deforestasi": -339.6
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "SULAWESI BARAT",
+   "kawasan_hutan": 566.4,
+   "bukan_kawasan_hutan": 361.4,
+   "total_deforestasi": 927.8
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "MALUKU",
+   "kawasan_hutan": 2967.5,
+   "bukan_kawasan_hutan": 749.4,
+   "total_deforestasi": 3716.9
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "MALUKU UTARA",
+   "kawasan_hutan": 8903,
+   "bukan_kawasan_hutan": 2917.2,
+   "total_deforestasi": 11820.2
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "PAPUA BARAT",
+   "kawasan_hutan": -1683.9,
+   "bukan_kawasan_hutan": 314.4,
+   "total_deforestasi": -1369.5
+ },
+ {
+   "tahun": 2017,
+   "provinsi": "PAPUA",
+   "kawasan_hutan": 32846.1,
+   "bukan_kawasan_hutan": 45941.3,
+   "total_deforestasi": 78787.4
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "ACEH",
+   "kawasan_hutan": 6737.5,
+   "bukan_kawasan_hutan": 4870.5,
+   "total_deforestasi": 11608
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "SUMATERA UTARA",
+   "kawasan_hutan": 9583.9,
+   "bukan_kawasan_hutan": 2818.5,
+   "total_deforestasi": 12402.4
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "SUMATERA BARAT",
+   "kawasan_hutan": 7626,
+   "bukan_kawasan_hutan": 1698.9,
+   "total_deforestasi": 9324.8
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "RIAU",
+   "kawasan_hutan": 136998.3,
+   "bukan_kawasan_hutan": 5012.9,
+   "total_deforestasi": 142011.1
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "JAMBI",
+   "kawasan_hutan": 26109.6,
+   "bukan_kawasan_hutan": 1272.3,
+   "total_deforestasi": 27382
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "SUMATERA SELATAN",
+   "kawasan_hutan": 57857.6,
+   "bukan_kawasan_hutan": 2797.5,
+   "total_deforestasi": 60655.1
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "BENGKULU",
+   "kawasan_hutan": 1959.4,
+   "bukan_kawasan_hutan": 201.2,
+   "total_deforestasi": 2160.6
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "LAMPUNG",
+   "kawasan_hutan": 182.3,
+   "bukan_kawasan_hutan": 443.2,
+   "total_deforestasi": 625.4
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "KEPULAUAN BANGKA BELITUNG",
+   "kawasan_hutan": 1574.3,
+   "bukan_kawasan_hutan": 580.2,
+   "total_deforestasi": 2154.4
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "KEPULAUAN RIAU",
+   "kawasan_hutan": 356.7,
+   "bukan_kawasan_hutan": 205.3,
+   "total_deforestasi": 562
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "DKI JAKARTA",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "JAWA BARAT",
+   "kawasan_hutan": 3782.4,
+   "bukan_kawasan_hutan": 1194.9,
+   "total_deforestasi": 4977.4
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "JAWA TENGAH",
+   "kawasan_hutan": 1859.6,
+   "bukan_kawasan_hutan": 44.5,
+   "total_deforestasi": 1904
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "DAERAH ISTIMEWA YOGYAKARTA",
+   "kawasan_hutan": 141.4,
+   "bukan_kawasan_hutan": 185,
+   "total_deforestasi": 326.4
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "JAWA TIMUR",
+   "kawasan_hutan": 5066.4,
+   "bukan_kawasan_hutan": 738.3,
+   "total_deforestasi": 5804.7
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "BANTEN",
+   "kawasan_hutan": 67.3,
+   "bukan_kawasan_hutan": 16.1,
+   "total_deforestasi": 83.4
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "BALI",
+   "kawasan_hutan": 89.3,
+   "bukan_kawasan_hutan": 1.7,
+   "total_deforestasi": 91
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "NUSA TENGGARA BARAT",
+   "kawasan_hutan": 12382.4,
+   "bukan_kawasan_hutan": 3589.4,
+   "total_deforestasi": 15971.9
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "NUSA TENGGARA TIMUR",
+   "kawasan_hutan": 1279.2,
+   "bukan_kawasan_hutan": 2233.6,
+   "total_deforestasi": 3512.8
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "KALIMANTAN BARAT",
+   "kawasan_hutan": 15109.1,
+   "bukan_kawasan_hutan": 8985.9,
+   "total_deforestasi": 24095
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "KALIMANTAN TENGAH",
+   "kawasan_hutan": 17974.3,
+   "bukan_kawasan_hutan": 8265.8,
+   "total_deforestasi": 26240.2
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "KALIMANTAN SELATAN",
+   "kawasan_hutan": 6309.9,
+   "bukan_kawasan_hutan": 1789.4,
+   "total_deforestasi": 8099.3
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "KALIMANTAN TIMUR",
+   "kawasan_hutan": 43031.6,
+   "bukan_kawasan_hutan": 26552.9,
+   "total_deforestasi": 69584.6
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "KALIMANTAN UTARA",
+   "kawasan_hutan": 43031.6,
+   "bukan_kawasan_hutan": 26552.9,
+   "total_deforestasi": 69584.6
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "SULAWESI UTARA",
+   "kawasan_hutan": 213,
+   "bukan_kawasan_hutan": 47.8,
+   "total_deforestasi": 260.8
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "SULAWESI TENGAH",
+   "kawasan_hutan": 2292.4,
+   "bukan_kawasan_hutan": 1499.4,
+   "total_deforestasi": 3791.8
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "SULAWESI SELATAN",
+   "kawasan_hutan": 1387.7,
+   "bukan_kawasan_hutan": 628,
+   "total_deforestasi": 2015.7
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "SULAWESI TENGGARA",
+   "kawasan_hutan": 4544.1,
+   "bukan_kawasan_hutan": 2013.1,
+   "total_deforestasi": 6557.2
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "GORONTALO",
+   "kawasan_hutan": 261.3,
+   "bukan_kawasan_hutan": 116.8,
+   "total_deforestasi": 378.1
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "SULAWESI BARAT",
+   "kawasan_hutan": -229.2,
+   "bukan_kawasan_hutan": 0.4,
+   "total_deforestasi": -228.8
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "MALUKU",
+   "kawasan_hutan": 1214.7,
+   "bukan_kawasan_hutan": 57.2,
+   "total_deforestasi": 1271.8
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "MALUKU UTARA",
+   "kawasan_hutan": 1780.7,
+   "bukan_kawasan_hutan": 546.2,
+   "total_deforestasi": 2326.8
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "PAPUA BARAT",
+   "kawasan_hutan": 1855.3,
+   "bukan_kawasan_hutan": 3440.8,
+   "total_deforestasi": 5296.1
+ },
+ {
+   "tahun": 2018,
+   "provinsi": "PAPUA",
+   "kawasan_hutan": 6468.1,
+   "bukan_kawasan_hutan": 4744.1,
+   "total_deforestasi": 11212.2
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "ACEH",
+   "kawasan_hutan": 1195.3,
+   "bukan_kawasan_hutan": 722.6,
+   "total_deforestasi": 1917.9
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "SUMATERA UTARA",
+   "kawasan_hutan": 470.4,
+   "bukan_kawasan_hutan": 763.2,
+   "total_deforestasi": 1233.6
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "SUMATERA BARAT",
+   "kawasan_hutan": 700.2,
+   "bukan_kawasan_hutan": 74.4,
+   "total_deforestasi": 774.6
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "RIAU",
+   "kawasan_hutan": 5672.6,
+   "bukan_kawasan_hutan": 893.6,
+   "total_deforestasi": 6566.2
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "JAMBI",
+   "kawasan_hutan": 4035,
+   "bukan_kawasan_hutan": 451.9,
+   "total_deforestasi": 4486.9
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "SUMATERA SELATAN",
+   "kawasan_hutan": -2353.6,
+   "bukan_kawasan_hutan": 41.6,
+   "total_deforestasi": -2312
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "BENGKULU",
+   "kawasan_hutan": 3022.5,
+   "bukan_kawasan_hutan": 337.3,
+   "total_deforestasi": 3359.8
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "LAMPUNG",
+   "kawasan_hutan": 384.1,
+   "bukan_kawasan_hutan": 79.2,
+   "total_deforestasi": 463.3
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "KEPULAUAN BANGKA BELITUNG",
+   "kawasan_hutan": 89.3,
+   "bukan_kawasan_hutan": 29.1,
+   "total_deforestasi": 118.4
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "KEPULAUAN RIAU",
+   "kawasan_hutan": 980.3,
+   "bukan_kawasan_hutan": 334.1,
+   "total_deforestasi": 1314.4
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "DKI JAKARTA",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "JAWA BARAT",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "JAWA TENGAH",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "DAERAH ISTIMEWA YOGYAKARTA",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "JAWA TIMUR",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "BANTEN",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 34.3,
+   "total_deforestasi": 34.3
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "BALI",
+   "kawasan_hutan": 43.8,
+   "bukan_kawasan_hutan": 1.2,
+   "total_deforestasi": 45
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "NUSA TENGGARA BARAT",
+   "kawasan_hutan": 10571.9,
+   "bukan_kawasan_hutan": 2436,
+   "total_deforestasi": 13007.9
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "NUSA TENGGARA TIMUR",
+   "kawasan_hutan": 2579.3,
+   "bukan_kawasan_hutan": 5710.2,
+   "total_deforestasi": 8289.5
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "KALIMANTAN BARAT",
+   "kawasan_hutan": 6546.6,
+   "bukan_kawasan_hutan": 9787.9,
+   "total_deforestasi": 16334.5
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "KALIMANTAN TENGAH",
+   "kawasan_hutan": 3206.4,
+   "bukan_kawasan_hutan": 3705.9,
+   "total_deforestasi": 6912.3
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "KALIMANTAN SELATAN",
+   "kawasan_hutan": 5247.8,
+   "bukan_kawasan_hutan": 2299.4,
+   "total_deforestasi": 7547.2
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "KALIMANTAN TIMUR",
+   "kawasan_hutan": 2792.7,
+   "bukan_kawasan_hutan": 7867.8,
+   "total_deforestasi": 10660.5
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "KALIMANTAN UTARA",
+   "kawasan_hutan": 2792.7,
+   "bukan_kawasan_hutan": 7867.8,
+   "total_deforestasi": 10660.5
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "SULAWESI UTARA",
+   "kawasan_hutan": 231.8,
+   "bukan_kawasan_hutan": 167.6,
+   "total_deforestasi": 399.4
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "SULAWESI TENGAH",
+   "kawasan_hutan": 5270.8,
+   "bukan_kawasan_hutan": 4232.3,
+   "total_deforestasi": 9503.1
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "SULAWESI SELATAN",
+   "kawasan_hutan": 386.5,
+   "bukan_kawasan_hutan": 532.6,
+   "total_deforestasi": 919.1
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "SULAWESI TENGGARA",
+   "kawasan_hutan": 2794.5,
+   "bukan_kawasan_hutan": 389.9,
+   "total_deforestasi": 3184.4
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "GORONTALO",
+   "kawasan_hutan": 737.1,
+   "bukan_kawasan_hutan": 330.8,
+   "total_deforestasi": 1067.9
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "SULAWESI BARAT",
+   "kawasan_hutan": 204.7,
+   "bukan_kawasan_hutan": 11,
+   "total_deforestasi": 215.7
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "MALUKU",
+   "kawasan_hutan": 8534,
+   "bukan_kawasan_hutan": 733.4,
+   "total_deforestasi": 9267.4
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "MALUKU UTARA",
+   "kawasan_hutan": 1506.8,
+   "bukan_kawasan_hutan": 103,
+   "total_deforestasi": 1609.8
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "PAPUA BARAT",
+   "kawasan_hutan": 413.5,
+   "bukan_kawasan_hutan": 1494.9,
+   "total_deforestasi": 1908.4
+ },
+ {
+   "tahun": 2019,
+   "provinsi": "PAPUA",
+   "kawasan_hutan": 1731.4,
+   "bukan_kawasan_hutan": 4898.9,
+   "total_deforestasi": 6630.3
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "ACEH",
+   "kawasan_hutan": 1816.3,
+   "bukan_kawasan_hutan": 1182.5,
+   "total_deforestasi": 2998.8
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "SUMATERA UTARA",
+   "kawasan_hutan": 2499,
+   "bukan_kawasan_hutan": 840,
+   "total_deforestasi": 3339
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "SUMATERA BARAT",
+   "kawasan_hutan": 5772,
+   "bukan_kawasan_hutan": 1025,
+   "total_deforestasi": 6797
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "RIAU",
+   "kawasan_hutan": 1425,
+   "bukan_kawasan_hutan": 93,
+   "total_deforestasi": 1518
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "JAMBI",
+   "kawasan_hutan": 19442,
+   "bukan_kawasan_hutan": 605,
+   "total_deforestasi": 20047
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "SUMATERA SELATAN",
+   "kawasan_hutan": 1982,
+   "bukan_kawasan_hutan": 210,
+   "total_deforestasi": 2192
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "BENGKULU",
+   "kawasan_hutan": 1854,
+   "bukan_kawasan_hutan": 179,
+   "total_deforestasi": 2033
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "LAMPUNG",
+   "kawasan_hutan": 222,
+   "bukan_kawasan_hutan": 53,
+   "total_deforestasi": 275
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "KEPULAUAN BANGKA BELITUNG",
+   "kawasan_hutan": 1870,
+   "bukan_kawasan_hutan": 117,
+   "total_deforestasi": 1987
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "KEPULAUAN RIAU",
+   "kawasan_hutan": 422,
+   "bukan_kawasan_hutan": 60,
+   "total_deforestasi": 482
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "DKI JAKARTA",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "JAWA BARAT",
+   "kawasan_hutan": 339,
+   "bukan_kawasan_hutan": 43,
+   "total_deforestasi": 382
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "JAWA TENGAH",
+   "kawasan_hutan": 195,
+   "bukan_kawasan_hutan": 12,
+   "total_deforestasi": 207
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "DAERAH ISTIMEWA YOGYAKARTA",
+   "kawasan_hutan": 0,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 0
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "JAWA TIMUR",
+   "kawasan_hutan": 85,
+   "bukan_kawasan_hutan": 58,
+   "total_deforestasi": 143
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "BANTEN",
+   "kawasan_hutan": 275,
+   "bukan_kawasan_hutan": 3,
+   "total_deforestasi": 278
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "BALI",
+   "kawasan_hutan": 46,
+   "bukan_kawasan_hutan": 0,
+   "total_deforestasi": 46
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "NUSA TENGGARA BARAT",
+   "kawasan_hutan": 2339,
+   "bukan_kawasan_hutan": 784,
+   "total_deforestasi": 3123
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "NUSA TENGGARA TIMUR",
+   "kawasan_hutan": 812,
+   "bukan_kawasan_hutan": 589,
+   "total_deforestasi": 1401
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "KALIMANTAN BARAT",
+   "kawasan_hutan": 3305,
+   "bukan_kawasan_hutan": 6790,
+   "total_deforestasi": 10095
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "KALIMANTAN TENGAH",
+   "kawasan_hutan": 15754,
+   "bukan_kawasan_hutan": 5782,
+   "total_deforestasi": 21536
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "KALIMANTAN SELATAN",
+   "kawasan_hutan": 1574,
+   "bukan_kawasan_hutan": 455,
+   "total_deforestasi": 2029
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "KALIMANTAN TIMUR",
+   "kawasan_hutan": 8150,
+   "bukan_kawasan_hutan": 12774,
+   "total_deforestasi": 20924
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "KALIMANTAN UTARA",
+   "kawasan_hutan": 8150,
+   "bukan_kawasan_hutan": 12774,
+   "total_deforestasi": 20924
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "SULAWESI UTARA",
+   "kawasan_hutan": 59,
+   "bukan_kawasan_hutan": 49,
+   "total_deforestasi": 108
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "SULAWESI TENGAH",
+   "kawasan_hutan": 1554,
+   "bukan_kawasan_hutan": 837,
+   "total_deforestasi": 2391
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "SULAWESI SELATAN",
+   "kawasan_hutan": 68,
+   "bukan_kawasan_hutan": 76,
+   "total_deforestasi": 144
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "SULAWESI TENGGARA",
+   "kawasan_hutan": 3400,
+   "bukan_kawasan_hutan": 788,
+   "total_deforestasi": 4188
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "GORONTALO",
+   "kawasan_hutan": 405,
+   "bukan_kawasan_hutan": 107,
+   "total_deforestasi": 512
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "SULAWESI BARAT",
+   "kawasan_hutan": 3605,
+   "bukan_kawasan_hutan": 86,
+   "total_deforestasi": 3691
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "MALUKU",
+   "kawasan_hutan": 1209,
+   "bukan_kawasan_hutan": 85,
+   "total_deforestasi": 1294
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "MALUKU UTARA",
+   "kawasan_hutan": 903,
+   "bukan_kawasan_hutan": 61,
+   "total_deforestasi": 964
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "PAPUA BARAT",
+   "kawasan_hutan": 603,
+   "bukan_kawasan_hutan": 1427,
+   "total_deforestasi": 2030
+ },
+ {
+   "tahun": 2020,
+   "provinsi": "PAPUA",
+   "kawasan_hutan": 1415,
+   "bukan_kawasan_hutan": 2136,
+   "total_deforestasi": 3551
+ }
+]
