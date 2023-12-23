@@ -3,30 +3,28 @@
 import { Table } from 'flowbite-react';
 import Link from "next/link";
 
-function TableData({ data }: any) {
+function TableData({ data,currentPage }: any) {
     return (
         <div className="overflow-x-auto mt-8 mx-8">
             <Table striped>
                 <Table.Head>
-                    <Table.HeadCell>Tahun</Table.HeadCell>
+                    <Table.HeadCell>No</Table.HeadCell>
+                    <Table.HeadCell>Nama</Table.HeadCell>
+                    <Table.HeadCell>Instansi Bekerja</Table.HeadCell>
+                    <Table.HeadCell>Posisi Bekerja</Table.HeadCell>
                     <Table.HeadCell>Provinsi</Table.HeadCell>
-                    <Table.HeadCell>Kawasan Hutan</Table.HeadCell>
-                    <Table.HeadCell>Bukan Kawasan Hutan</Table.HeadCell>
-                    <Table.HeadCell>Total Deforestasi</Table.HeadCell>
-                    <Table.HeadCell>Action</Table.HeadCell>
+                    <Table.HeadCell className='text-center'>Action</Table.HeadCell>
                 </Table.Head>
                 <Table.Body className="divide-y">
                     {data?.map((item: any, key: number) => (
                         <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800" key={key}>
-                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                {item.tahun}
-                            </Table.Cell>
+                            <Table.Cell>{(key+1)+(10*(currentPage-1))}</Table.Cell>
+                            <Table.Cell>{item.nama}</Table.Cell>
+                            <Table.Cell>{item.instansi_bekerja}</Table.Cell>
+                            <Table.Cell>{item.posisi_bekerja}</Table.Cell>
                             <Table.Cell>{item.provinsi}</Table.Cell>
-                            <Table.Cell>{item.kawasan_hutan}</Table.Cell>
-                            <Table.Cell>{item.bukan_kawasan_hutan}</Table.Cell>
-                            <Table.Cell>{item.total_deforestasi}</Table.Cell>
-                            <Table.Cell>
-                                <Link href={"/detaildata?id=" + item.id} className="hover:text-primary">
+                            <Table.Cell className='text-center'>
+                                <Link href={"/detaildata?id=" + item.id} className="hover:text-primary inline-block">
                                     <svg
                                         className="fill-current"
                                         width="18"

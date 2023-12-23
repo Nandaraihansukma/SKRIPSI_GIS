@@ -1,11 +1,19 @@
-import DatabaseComponent from '@/components/Database/DatabaseComponent';
-import React from 'react';
+import DatabaseComponent from "@/components/Database/DatabaseComponent";
+import React from "react";
+import { getServerSession } from "next-auth/next";
+import { redirect } from "next/navigation";
 
 async function DBPage() {
-    return (
-        <div className='h-[3029px] w-full 2xl:px-30 bg-cover bg-top' style={{ backgroundImage: "url('/assets/bg/bg-landing.png')" }}>
-            <DatabaseComponent/>
-        </div>
-    );
-};
+  const session = await getServerSession();
+  if (session) {
+    redirect("/");
+  }
+  return (
+    <div className="w-full xl:px-30 px-10 mt-4">
+      <DatabaseComponent />
+    </div>
+  );
+}
+
 export default DBPage;
+

@@ -18,12 +18,17 @@ export default function AddForm() {
     const [formData, setFormData] = useState({
         lat: center.lat,
         lng: center.lng,
-        tahun: "",
-        prov_id: "",
-        prov: "None",
-        kw_hutan: "",
-        kw_bukan_hutan: "",
-        total: "",
+        nama: "",
+        npm: "",
+        prov_id:"",
+        provinsi: "None",
+        instansi_bekerja: "",
+        Alamat: "",
+        posisi_bekerja: "",
+        mulai_bekerja: "",
+        besaran_gaji: "",
+        kesesuaian: "",
+        informasi_loker: "",
     });
     const [loading, setLoading] = useState<boolean>(true);
     const markerRef = useRef<any>(null)
@@ -72,25 +77,35 @@ export default function AddForm() {
         })
         const { data } = await res.json()
         if (data.length != 0) {
-            setFormData({ ...formData, prov_id: data[0]?._id.$oid, prov: data[0]?.name })
+            setFormData({ ...formData, prov_id: data[0]?._id.$oid, provinsi: data[0]?.name })
         } else {
-            setFormData({ ...formData, prov_id: "", prov: "None" })
+            setFormData({ ...formData, prov_id: "", provinsi: "None" })
         }
     }
     const addGeoData = async () => {
         if(formData.prov_id == ""){
             return
         }
+        const mulaiBekerjaDate = new Date(formData.mulai_bekerja); // Membuat objek Date dari formData.mulai_bekerja
+        const formattedMulaiBekerja = mulaiBekerjaDate.toISOString(); // Mengubahnya menjadi string format datetime
+
         const res = await fetch('/api/geodata/add', {
             method: "POST",
             body: JSON.stringify({
                 geoloc_id: formData.prov_id,
                 data: {
-                    tahun: Number(formData.tahun),
-                    provinsi: formData.prov,
-                    kawasan_hutan: Number(formData.kw_hutan),
-                    bukan_kawasan_hutan: Number(formData.kw_bukan_hutan),
-                    total_deforestasi: Number(formData.total),
+                    latitude: (formData.lat),
+                    longitude: (formData.lng),
+                    nama: (formData.nama),
+                    npm: Number(formData.npm),
+                    provinsi: (formData.provinsi),
+                    instansi_bekerja: (formData.instansi_bekerja),
+                    Alamat: (formData.Alamat),
+                    posisi_bekerja: (formData.posisi_bekerja),
+                    mulai_bekerja: (formattedMulaiBekerja),
+                    besaran_gaji: (formData.besaran_gaji),
+                    kesesuaian: (formData.kesesuaian),
+                    informasi_loker: (formData.informasi_loker),
                 }
             })
         })
@@ -175,30 +190,45 @@ export default function AddForm() {
 
                             <div className="mb-4.5">
                                 <label className="mb-2.5 block text-black dark:text-white">
-                                    Tahun <span className="text-meta-1">*</span>
+                                    Nama <span className="text-meta-1">*</span>
                                 </label>
                                 <input
-                                    type="number"
-                                    placeholder="Enter Year"
+                                    type="text"
+                                    placeholder="Masukkan nama"
                                     className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                                    value={formData.tahun}
+                                    value={formData.nama}
                                     onChange={({ target }) =>
-                                        setFormData({ ...formData, tahun: target.value })
+                                        setFormData({ ...formData, nama: target.value })
                                     }
                                 />
                             </div>
 
                             <div className="mb-4.5">
                                 <label className="mb-2.5 block text-black dark:text-white">
-                                    Provinsi
+                                    NPM <span className="text-meta-1">*</span>
+                                </label>
+                                <input
+                                    type="number"
+                                    placeholder="Masukkan npm"
+                                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                                    value={formData.npm}
+                                    onChange={({ target }) =>
+                                        setFormData({ ...formData, npm: target.value })
+                                    }
+                                />
+                            </div>
+
+                            <div className="mb-4.5">
+                                <label className="mb-2.5 block text-black dark:text-white">
+                                    Provinsi <span className="text-meta-1">*</span>
                                 </label>
                                 <input
                                     type="text"
-                                    placeholder="Enter Provinsi"
+                                    placeholder="Masukkan provinsi"
                                     className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                                    value={formData.prov}
+                                    value={formData.provinsi}
                                     onChange={({ target }) =>
-                                        setFormData({ ...formData, prov: target.value })
+                                        setFormData({ ...formData, provinsi: target.value })
                                     }
                                     disabled
                                 />
@@ -206,50 +236,110 @@ export default function AddForm() {
 
                             <div className="mb-4.5">
                                 <label className="mb-2.5 block text-black dark:text-white">
-                                    Kawasan Hutan
+                                    Instansi Bekerja <span className="text-meta-1">*</span>
                                 </label>
                                 <input
-                                    type="number"
-                                    placeholder="Enter Kawasan Hutan"
+                                    type="text"
+                                    placeholder="Masukkan instansi bekerja"
                                     className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                                    value={formData.kw_hutan}
+                                    value={formData.instansi_bekerja}
                                     onChange={({ target }) =>
-                                        setFormData({ ...formData, kw_hutan: target.value })
+                                        setFormData({ ...formData, instansi_bekerja: target.value })
                                     }
                                 />
                             </div>
 
                             <div className="mb-4.5">
                                 <label className="mb-2.5 block text-black dark:text-white">
-                                    Bukan Kawasan Hutan
+                                    Alamat Instansi <span className="text-meta-1">*</span>
                                 </label>
                                 <input
-                                    type="number"
-                                    placeholder="Enter Bukan Kawasan Hutan"
+                                    type="text"
+                                    placeholder="Masukkan alamat instansi"
                                     className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                                    value={formData.kw_bukan_hutan}
+                                    value={formData.Alamat}
                                     onChange={({ target }) =>
-                                        setFormData({ ...formData, kw_bukan_hutan: target.value })
+                                        setFormData({ ...formData, Alamat: target.value })
                                     }
                                 />
                             </div>
 
                             <div className="mb-4.5">
                                 <label className="mb-2.5 block text-black dark:text-white">
-                                    Total Deforestasi
+                                    Posisi Bekerja <span className="text-meta-1">*</span>
                                 </label>
                                 <input
-                                    type="number"
-                                    placeholder="Enter Total Deforestasi"
+                                    type="text"
+                                    placeholder="Masukkan posisi bekerja"
                                     className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                                    value={formData.total}
+                                    value={formData.posisi_bekerja}
                                     onChange={({ target }) =>
-                                        setFormData({ ...formData, total: target.value })
+                                        setFormData({ ...formData, posisi_bekerja: target.value })
                                     }
                                 />
                             </div>
 
-                            <button className="flex w-full justify-center rounded bg-primary p-3 font-medium text-white" type="submit">
+                            <div className="mb-4.5">
+                                <label className="mb-2.5 block text-black dark:text-white">
+                                    Tanggal Mulai Bekerja <span className="text-meta-1">*</span>
+                                </label>
+                                <input
+                                    type="date"
+                                    placeholder="Masukkan tanggal mulai bekerja"
+                                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                                    value={formData.mulai_bekerja}
+                                    onChange={({ target }) =>
+                                        setFormData({ ...formData, mulai_bekerja: target.value })
+                                    }
+                                />
+                            </div>
+
+                            <div className="mb-4.5">
+                                <label className="mb-2.5 block text-black dark:text-white">
+                                    Besaran Gaji <span className="text-meta-1">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="Masukkan besaran gaji"
+                                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                                    value={formData.besaran_gaji}
+                                    onChange={({ target }) =>
+                                        setFormData({ ...formData, besaran_gaji: target.value })
+                                    }
+                                />
+                            </div>
+
+                            <div className="mb-4.5">
+                                <label className="mb-2.5 block text-black dark:text-white">
+                                    Kesesuaian <span className="text-meta-1">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="Sesuai/tidak"
+                                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                                    value={formData.kesesuaian}
+                                    onChange={({ target }) =>
+                                        setFormData({ ...formData, kesesuaian: target.value })
+                                    }
+                                />
+                            </div>
+
+                            <div className="mb-4.5">
+                                <label className="mb-2.5 block text-black dark:text-white">
+                                    Informasi Loker <span className="text-meta-1">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="Masukkan informasi loker"
+                                    className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                                    value={formData.informasi_loker}
+                                    onChange={({ target }) =>
+                                        setFormData({ ...formData, informasi_loker: target.value })
+                                    }
+                                />
+                            </div>
+
+                            <button className="flex justify-center rounded bg-[#263238] p-3 font-medium text-white" type="submit">
                                 Submit
                             </button>
                         </div>

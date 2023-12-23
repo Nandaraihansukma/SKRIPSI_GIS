@@ -1,7 +1,7 @@
 import Landing from './landing/page';
-import Dashboard from './dashboard/page';
 import { Metadata } from "next";
 import { getServerSession } from "next-auth/next"
+import Map from './map/page';
 
 export const metadata: Metadata = {
     title: "TailAdmin | Next.js  Dashboard Template",
@@ -14,7 +14,7 @@ export default async function Home() {
     return (
         <>
             {session ? (
-                <Dashboard />
+                <Map />
             ) : (
                 <Landing />
             )}

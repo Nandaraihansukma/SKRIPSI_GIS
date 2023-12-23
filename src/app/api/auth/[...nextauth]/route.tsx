@@ -22,6 +22,7 @@ async function auth(req: NextApiRequest, res: NextApiResponse) {
                 password: { label: "Password", type: "password" }
             },
             async authorize(credentials, req) {
+                console.log("testAuthorize")
                 // You need to provide your own logic here that takes the credentials
                 // submitted and returns either a object representing a user or value
                 // that is false/null if the credentials are invalid.
@@ -73,8 +74,8 @@ async function auth(req: NextApiRequest, res: NextApiResponse) {
         pages: {
             signIn: '/login',
             // signOut: '/auth/signout',
-            error: '/login', // Error code passed in query string as ?error=
-            verifyRequest: '/auth/verify-request', // (used for check email message)
+            // error: '/login', // Error code passed in query string as ?error=
+            // verifyRequest: '/auth/verify-request', // (used for check email message)
             // newUser: '/auth/new-user' // New users will be directed here on first sign in (leave the property out if not of interest)
         }
     });

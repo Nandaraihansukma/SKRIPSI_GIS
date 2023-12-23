@@ -8,6 +8,7 @@ import NavbarComponent from "@/components/Navbar/NavbarComponent";
 import Loader from "@/components/common/Loader";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
+import FooterComponent from "../Footer/FooterComponent";
 
 export default function RootLayoutComponent({
     children,
@@ -18,9 +19,10 @@ export default function RootLayoutComponent({
     const { data: session, status, update } = useSession();
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
-    const [loading, setLoading] = useState<boolean>(true);
+    const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
+        console.log(status)
         if (checkSession) {
             window.location.reload()
         }
@@ -64,7 +66,12 @@ export default function RootLayoutComponent({
                                 <main className="flex flex-grow ">
                                     {children}
                                 </main>
-                                {/* <!-- ===== Main Content End ===== --> */}
+                                {status == "unauthenticated" ? (
+                                    <FooterComponent/>
+                                ) : (
+                                    null
+                            
+                                )}
                             </div>
                             {/* <!-- ===== Content Area End ===== --> */}
                         </div>

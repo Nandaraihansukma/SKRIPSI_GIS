@@ -1,15 +1,18 @@
 import React from 'react';
 import TextLanding from '@/components/Text/TextLanding';
-import CardLanding from '@/components/Card/CardLanding';
-import TextareaLanding from '@/components/Textarea/TextareaLanding';
+import { getServerSession } from "next-auth/next";
+import { redirect } from "next/navigation";
 
-function Landing() {
+
+async function Landing() {
+  const session = await getServerSession();
+  if (session) {
+    redirect("/");
+  }
   return (
-    <div className='h-[3029px] w-full 2xl:px-30 px-10 bg-cover bg-top' style={{ backgroundImage: "url('/assets/bg/bg-landing.png')"}}>
-        <TextLanding/>
-        <CardLanding/>
-        <TextareaLanding/>
-      {/* Konten halaman Anda akan ada di sini */}
+      <div className='w-full 2xl:px-30 px-10 bg-white flex items-center'>
+        <img src="/assets/gambarHome.png" alt="gambarHome" className="w-150 h-auto ml-20 mr-10" />
+          <TextLanding/>
     </div>
   );
 };

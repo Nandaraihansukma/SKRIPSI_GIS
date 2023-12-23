@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth/next"
 import { redirect } from "next/navigation";
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
+// import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import WhiteButton from "@/components/Button/WhiteButton";
 import TableThree from "@/components/Tables/TableThree";
 
@@ -20,10 +20,7 @@ const TablesPage = async () => {
     return (
         <>
             <div className="w-full 2xl:px-30 px-10 pt-10">
-                <Breadcrumb pageName="Tables" />
-                <div className="flex justify-end mb-6">
-                    <WhiteButton text="Tambah Data" href="/tables/add" />
-                </div>
+                {/* <Breadcrumb pageName="Tables" /> */}
                 <div className="flex flex-col gap-10">
                     <TableThree />
                 </div>
