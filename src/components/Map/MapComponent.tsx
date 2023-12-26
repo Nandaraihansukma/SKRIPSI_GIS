@@ -159,19 +159,28 @@ const MapComponent = () => {
   };
 
   const geolocsAPI = async () => {
-    const res = await fetch(
-      "/api/geoloc?" +
-        new URLSearchParams({
-          year: year.toString(),
-        }),
-      {
-        method: "GET",
-      }
-    );
-    const { data }: { data: Geolocs[] } = await res.json();
-    console.log(data);
-    const result = calculate(data);
-    setGeolocs(result);
+    try {
+      const res = await fetch(
+        "/api/geoloc?" +
+          new URLSearchParams({
+            year: year.toString(),
+          }),
+        {
+          method: "GET",
+          headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate', // Atur header cache-control
+          },
+        }
+      );
+  
+      const { data }: { data: Geolocs[] } = await res.json();
+      console.log(data);
+      const result = calculate(data);
+      setGeolocs(result);
+    } catch (error) {
+      // Handle error
+      console.error('Error fetching geolocs:', error);
+    }
   };
 
   useEffect(() => {
