@@ -161,12 +161,10 @@ const MapComponent = () => {
   const geolocsAPI = async () => {
     try {
       const res = await fetch(
-        "/api/geoloc?" +
-          new URLSearchParams({
-            year: year.toString(),
-          }),
+        "/api/geoloc",
         {
           method: "GET",
+          cache: "no-store",
           headers: {
             'Cache-Control': 'no-cache, no-store, must-revalidate', // Atur header cache-control
           },
