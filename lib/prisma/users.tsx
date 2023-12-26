@@ -19,7 +19,7 @@ export async function getUserByID(id: string) {
                 id: true,
                 name: true,
                 email: true,
-                image: true,
+                // image: true,
             },
             where: { id: id, }
         });
