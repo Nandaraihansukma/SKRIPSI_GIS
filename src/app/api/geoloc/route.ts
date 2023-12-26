@@ -2,6 +2,9 @@ import { getGeoLocs } from "@/lib/prisma/geoloc";
 import { revalidatePath } from "next/cache";
 import { NextRequest } from "next/server";
 
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
+
 export async function GET(request: NextRequest) {
     try {
         const { res, error } = await getGeoLocs();
