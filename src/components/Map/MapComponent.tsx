@@ -174,7 +174,7 @@ const MapComponent = () => {
       );
   
       const { data }: { data: Geolocs[] } = await res.json();
-      console.log(data);
+      console.log("DATA GEOLOC", data);
       const result = calculate(data);
       setGeolocs(result);
     } catch (error) {
