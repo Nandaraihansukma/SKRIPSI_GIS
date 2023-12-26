@@ -154,7 +154,7 @@ function DatabaseComponent() {
             <div className="flex overflow-x-auto sm:justify-end mx-8 mt-2 mb-8">
               <Pagination
                 currentPage={currentFilter.page}
-                totalPages={Math.floor(geodatas.count / currentFilter.take)}
+                totalPages={Math.ceil(geodatas.count / currentFilter.take)}
                 onPageChange={onPageChange}
               />
             </div>
