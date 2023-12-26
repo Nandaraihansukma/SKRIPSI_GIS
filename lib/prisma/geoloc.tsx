@@ -4,7 +4,7 @@ export async function getGeoLocs() {
   try {
     const res = await prisma.geoLocation.findMany({
       include: {
-        geodatas: {},
+        geodatas: true,
         _count: {
           select: {
             geodatas: true,
