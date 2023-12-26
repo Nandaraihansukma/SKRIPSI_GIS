@@ -2,17 +2,24 @@ import prisma from ".";
 
 export async function getGeoLocs() {
   try {
-    const res = await prisma.geoLocation.findMany({
-      include: {
-        geodatas: true,
-        _count: {
-          select: {
-            geodatas: true,
-          },
-        },
-      },
+    // Ambil data geoLocation
+    const geoLocations = await prisma.geoLocation.findMany();
+
+    // Ambil data geoData
+    const geoData = await prisma.geoData.findMany();
+
+    // Lakukan join atau penggabungan data
+    const joinedData = geoLocations.map((location) => {
+      // Dapatkan geodatas dari geoData yang sesuai dengan geoLocation
+      const geodatas = geoData.filter((data) => data.geoloc_id === location.id);
+      return {
+        ...location,
+        geodatas,
+        _count: { geodatas: geodatas.length }, // Atur _count sesuai jumlah geodatas
+      };
     });
-    return { res };
+
+    return { res: joinedData };
   } catch (error) {
     return { error };
   }
