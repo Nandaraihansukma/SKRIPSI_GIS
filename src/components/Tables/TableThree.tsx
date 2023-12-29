@@ -262,7 +262,7 @@ const TableThree = () => {
                   ))}
                 </tbody>
               </table>
-              <div className="flex overflow-x-auto sm:justify-end mx-8">
+              <div className="flex overflow-x-auto sm:justify-end mb-2 mt-2">
                 <Pagination
                   currentPage={currentFilter.page}
                   totalPages={Math.ceil(geodatas.count / currentFilter.take)}

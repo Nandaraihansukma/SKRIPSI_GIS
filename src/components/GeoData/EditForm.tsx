@@ -168,7 +168,7 @@ export default function EditForm() {
               </div>
 
               <button type="submit" className="flex justify-center rounded bg-[#263238] p-2 font-medium  text-white">
-                Submit
+                Simpan
               </button>
             </div>
           </form>

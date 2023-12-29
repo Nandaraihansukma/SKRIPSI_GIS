@@ -60,7 +60,7 @@ const DropdownUser = (props: { session: Session | null }) => {
           <span className="block text-sm font-medium text-black dark:text-white">
             {props.session?.user?.name}
           </span>
-          <span className="block text-xs">Administrator</span>
+          <span className="block text-xs">Welcome!</span>
         </span>
 
         <span className="h-12 w-12 rounded-full">
@@ -123,7 +123,7 @@ const DropdownUser = (props: { session: Session | null }) => {
               fill=""
             />
           </svg>
-          Log Out
+          Keluar
         </button>
       </div>
       {/* <!-- Dropdown End --> */}

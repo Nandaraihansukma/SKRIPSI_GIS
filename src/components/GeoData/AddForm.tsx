@@ -348,7 +348,7 @@ export default function AddForm() {
                             </div>
 
                             <button className="flex justify-center rounded bg-[#263238] p-3 font-medium text-white" type="submit">
-                                Submit
+                                Tambah
                             </button>
                         </div>
                     </form>
