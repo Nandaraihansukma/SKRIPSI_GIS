@@ -156,10 +156,9 @@ export default function AddForm() {
                             </>
                         )}
                     </div>
-                    <form onSubmit={(event: any) => {
-                        event.preventDefault();
-                        addGeoData();
-                    }}>
+                    <form action={ 
+                        addGeoData
+                    }>
                         <div className="p-6.5">
 
                             <div className="mb-4.5">
@@ -200,6 +199,7 @@ export default function AddForm() {
                                     onChange={({ target }) =>
                                         setFormData({ ...formData, nama: target.value })
                                     }
+                                    required
                                 />
                             </div>
 
@@ -215,6 +215,7 @@ export default function AddForm() {
                                     onChange={({ target }) =>
                                         setFormData({ ...formData, npm: target.value })
                                     }
+                                    required
                                 />
                             </div>
 
@@ -246,6 +247,7 @@ export default function AddForm() {
                                     onChange={({ target }) =>
                                         setFormData({ ...formData, instansi_bekerja: target.value })
                                     }
+                                    required
                                 />
                             </div>
 
@@ -261,6 +263,7 @@ export default function AddForm() {
                                     onChange={({ target }) =>
                                         setFormData({ ...formData, Alamat: target.value })
                                     }
+                                    required
                                 />
                             </div>
 
@@ -276,6 +279,7 @@ export default function AddForm() {
                                     onChange={({ target }) =>
                                         setFormData({ ...formData, posisi_bekerja: target.value })
                                     }
+                                    required
                                 />
                             </div>
 
@@ -291,6 +295,7 @@ export default function AddForm() {
                                     onChange={({ target }) =>
                                         setFormData({ ...formData, mulai_bekerja: target.value })
                                     }
+                                    required
                                 />
                             </div>
 
@@ -306,6 +311,7 @@ export default function AddForm() {
                                     onChange={({ target }) =>
                                         setFormData({ ...formData, besaran_gaji: target.value })
                                     }
+                                    required
                                 />
                             </div>
 
@@ -321,6 +327,7 @@ export default function AddForm() {
                                     onChange={({ target }) =>
                                         setFormData({ ...formData, kesesuaian: target.value })
                                     }
+                                    required
                                 />
                             </div>
 
@@ -336,6 +343,7 @@ export default function AddForm() {
                                     onChange={({ target }) =>
                                         setFormData({ ...formData, informasi_loker: target.value })
                                     }
+                                    required
                                 />
                             </div>
 

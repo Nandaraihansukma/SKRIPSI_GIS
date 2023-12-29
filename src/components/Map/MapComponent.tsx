@@ -241,7 +241,7 @@ const MapComponent = () => {
       </MapContainer> 
       <div className="fixed z-1200 flex items-start w-fit">
         <div>
-          <Card className="max-w-sm fixed top-15 bottom-2 right-0 z-1200 rounded-none">
+          <Card className="max-w-sm mt-30 fixed top-15 right-0 z-1200 rounded-none">
             <div className="flex items-center justify-between">
               <h6 className="text-sm font-bold leading-none text-gray-900 dark:text-white">
                 Ketarangan Peta Alumni
@@ -257,7 +257,7 @@ const MapComponent = () => {
                       </p>
                     </div>
                     <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                      <div className="w-3 h-3 mx-2 bg-green-500 rounded-full"></div>{" "}
+                      <div className="w-3 h-3 mx-2 bg-green-500"></div>{" "}
                       {/* Hijau */}
                     </div>
                   </div>
@@ -270,7 +270,7 @@ const MapComponent = () => {
                       </p>
                     </div>
                     <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                      <div className="w-3 h-3 mx-2 bg-yellow-300 rounded-full"></div>{" "}
+                      <div className="w-3 h-3 mx-2 bg-yellow-300"></div>{" "}
                       {/* Kuning */}
                     </div>
                   </div>
@@ -283,7 +283,7 @@ const MapComponent = () => {
                       </p>
                     </div>
                     <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                      <div className="w-3 h-3 mx-2 bg-red-500 rounded-full"></div>{" "}
+                      <div className="w-3 h-3 mx-2 bg-red-500"></div>{" "}
                       {/* Merah */}
                     </div>
                   </div>
@@ -295,7 +295,7 @@ const MapComponent = () => {
                         n
                       </p>
                     </div>
-                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <div className="inline-flex items-center text-base font-medium text-gray-900 dark:text-white">
                       {calculations.n}
                     </div>
                   </div>
@@ -307,7 +307,7 @@ const MapComponent = () => {
                         std
                       </p>
                     </div>
-                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <div className="inline-flex items-center text-base font-medium text-gray-900 dark:text-white">
                       {calculations.std}
                     </div>
                   </div>
@@ -319,7 +319,7 @@ const MapComponent = () => {
                         mean
                       </p>
                     </div>
-                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <div className="inline-flex items-center text-base font-medium text-gray-900 dark:text-white">
                       {calculations.mean}
                     </div>
                   </div>
@@ -331,7 +331,7 @@ const MapComponent = () => {
                         upper
                       </p>
                     </div>
-                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <div className="inline-flex items-center text-base font-medium text-gray-900 dark:text-white">
                       {calculations.upper}
                     </div>
                   </div>
@@ -343,7 +343,7 @@ const MapComponent = () => {
                         lower
                       </p>
                     </div>
-                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <div className="inline-flex items-center text-base font-medium text-gray-900 dark:text-white">
                       {calculations.lower}
                     </div>
                   </div>

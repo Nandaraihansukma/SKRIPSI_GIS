@@ -29,6 +29,11 @@ async function DetailData({
                         <td>{res.nama}</td>
                     </tr>
                     <tr>
+                        <td className="whitespace-nowrap">NPM</td>
+                        <td className="px-4">:</td>
+                        <td>{res.npm}</td>
+                    </tr>
+                    <tr>
                         <td className="whitespace-nowrap">Instansi Bekerja</td>
                         <td className="px-4">:</td>
                         <td>{res.instansi_bekerja}</td>
