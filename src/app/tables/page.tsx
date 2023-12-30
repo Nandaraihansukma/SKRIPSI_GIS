@@ -7,8 +7,8 @@ import TableThree from "@/components/Tables/TableThree";
 
 import { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "Tables Page | Next.js E-commerce Dashboard Template",
-    description: "This is Tables page for TailAdmin Next.js",
+    title: "Tables Page | AlumMap Admin",
+    description: "This is Tables page for Admin AlumMap",
     // other metadata
 };
 
