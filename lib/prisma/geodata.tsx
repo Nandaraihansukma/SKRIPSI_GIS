@@ -73,11 +73,32 @@ export async function getGeoDataByName(
     });
     const count = await prisma.geoData.count({
       where: {
-        nama: {
-          contains: name,
-          mode: "insensitive",
-        },
+        OR: [
+          {
+            nama: {
+              contains: name,
+              mode: "insensitive",
+            },
+          },
+          {
+            posisi_bekerja: {
+              contains: name,
+              mode: "insensitive",
+            },
+          },
+          {
+            provinsi: {
+              contains: name,
+              mode: "insensitive",
+            },
+          },
+        ],
       },
+      orderBy: [
+        {
+          id: "asc",
+        },
+      ]
     });
     return { res, count };
   } catch (error) {

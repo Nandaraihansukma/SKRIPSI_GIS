@@ -167,6 +167,7 @@ export default function AddForm() {
                                 </label>
                                 <input
                                     type="number"
+                                    onKeyDown={(e)=>{["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}}
                                     placeholder="Enter Latitude"
                                     className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                                     value={formData.lat}
@@ -180,6 +181,7 @@ export default function AddForm() {
                                 </label>
                                 <input
                                     type="number"
+                                    onKeyDown={(e)=>{["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}}
                                     placeholder="Enter Longitude"
                                     className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                                     value={formData.lng}
@@ -209,6 +211,7 @@ export default function AddForm() {
                                 </label>
                                 <input
                                     type="number"
+                                    onKeyDown={(e)=>{["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}}
                                     placeholder="Masukkan npm"
                                     className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                                     value={formData.npm}
