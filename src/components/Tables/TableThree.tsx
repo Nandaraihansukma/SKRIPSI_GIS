@@ -177,7 +177,7 @@ const TableThree = () => {
                       Posisi Bekerja
                     </th>
                     <th className="py-4 px-4 font-medium text-black dark:text-white">
-                      Provinsi
+                      Kabupaten/Kota
                     </th>
                     <th className="py-4 px-4 font-medium text-black dark:text-white">
                       Action
@@ -209,7 +209,7 @@ const TableThree = () => {
                       </td>
                       <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                         <p className="text-black dark:text-white">
-                          {item.provinsi}
+                          {item.Kab_kota}
                         </p>
                       </td>
                       <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">

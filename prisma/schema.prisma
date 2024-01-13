@@ -74,6 +74,7 @@ model GeoData {
     instansi_bekerja    String
     Alamat              String
     provinsi            String
+    Kab_kota            String
     latitude            Float
     longitude           Float
     posisi_bekerja      String

@@ -132,76 +132,109 @@
 // export default LoginNanda;
 
 import React, { useEffect, useState } from "react";
-import { Button, Label, TextInput } from 'flowbite-react';
+import { Button, Label, TextInput } from "flowbite-react";
 import { useFormState } from "react-dom";
 import { LoginAction } from "./LoginAction";
 import ModalComponent from "@/components/Modal/ModalComponent";
 
-
 const initialState = {
-    message: null,
-}
+  message: null,
+};
 
 function LoginForm() {
-    const [state, loginFormAction] = useFormState(LoginAction, initialState);
-    const [disableLogin, setDisableLogin] = useState(false);
-    const [optModal, setOptModal] = useState<{
-        open: boolean,
-        status: "success" | "error",
-        message: string
-    }>({
-        open: false,
-        status: "success",
-        message: ""
-    });
+  const [state, loginFormAction] = useFormState(LoginAction, initialState);
+  const [disableLogin, setDisableLogin] = useState(false);
+  const [optModal, setOptModal] = useState<{
+    open: boolean;
+    status: "success" | "error";
+    message: string;
+  }>({
+    open: false,
+    status: "success",
+    message: "",
+  });
 
-    const setModal = ({ open, status, message }: { open: boolean, status: "success" | "error", message: string }) => {
-        setOptModal({ open: open, status: status, message: message });
+  const setModal = ({
+    open,
+    status,
+    message,
+  }: {
+    open: boolean;
+    status: "success" | "error";
+    message: string;
+  }) => {
+    setOptModal({ open: open, status: status, message: message });
+  };
+  useEffect(() => {
+    if (state.message == null || state.message == "Success") {
+      return;
     }
-    useEffect(() => {
-        if (state.message == null || state.message == "Success") {
-            return
-        }
-        setDisableLogin(false);
-        setOptModal({ open: true, status: "error", message: state.message });
-    }, [state])
+    setDisableLogin(false);
+    setOptModal({ open: true, status: "error", message: state.message });
+  }, [state]);
 
-    return (
-        <>
-            <ModalComponent optModal={optModal} setModal={setModal} />
-            <div className="h-fit w-full max-h-fit max-w-screen-2xl py-10 my-auto mx-autorounded-sm dark:border-strokedark dark:bg-boxdark">
-                <div className="grid h-full place-items-center">
-                    <div className="max-w-2xl w-full py-3 xl:py-15 px-[5%] lg:px-[10%] border border-stroke bg-white shadow-default">
-                        <form className="flex w-full flex-col gap-4" action={loginFormAction} onSubmit={(e)=>{
-                            setDisableLogin(true);
-                        }}>
-                            <h2 className="text-2xl font-bold text-[#263238] dark:text-white sm:text-title-xl2">
-                                Administrator AlumMap<br />
-                            </h2>
+  return (
+    <>
+      <ModalComponent optModal={optModal} setModal={setModal} />
+      <div className="h-fit w-full max-h-fit max-w-screen-2xl py-10 my-auto mx-autorounded-sm dark:border-strokedark dark:bg-boxdark">
+        <div className="grid h-full place-items-center">
+          <div className="max-w-2xl w-full py-3 xl:py-15 px-[5%] lg:px-[10%] border border-stroke bg-[#407BFF] shadow-default">
+            <form
+              className="flex w-full flex-col gap-4"
+              action={loginFormAction}
+              onSubmit={(e) => {
+                setDisableLogin(true);
+              }}
+            >
+              <h2 className="text-2xl font-bold text-[#263238] dark:text-white sm:text-title-xl2">
+                Administrator AlumMap
+                <br />
+              </h2>
 
-                            <div>
-                                <div className="mb-2 block">
-                                    <Label className="text-md" htmlFor="email" value="Email" />
-                                </div>
-                                <TextInput id="email" name="email" type="email" placeholder="Enter your email" required shadow />
-                            </div>
-                            <div>
-                                <div className="mb-2 block">
-                                    <Label className="text-md" htmlFor="password" value="Password" />
-                                </div>
-                                <TextInput id="password" name="password" type="password" placeholder="Enter your password" required shadow />
-                            </div>
-                            <Button id="login-bttn" className="border-[#263238] border-solid border-2 hover:bg-[#263238] font-semibold text-[#263238] hover:text-[#FFFFFF]" type="submit" disabled={disableLogin}>
-                                <span className="font-satoshi text-base">
-                                    Masuk
-                                </span>
-                            </Button>
-                        </form>
-                    </div>
+              <div>
+                <div className="mb-2 block">
+                  <Label className="text-md" htmlFor="email" value="Email" />
                 </div>
-            </div>
-        </>
-    );
+                <TextInput
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Enter your email"
+                  required
+                  shadow
+                />
+              </div>
+              <div>
+                <div className="mb-2 block">
+                  <Label
+                    className="text-md"
+                    htmlFor="password"
+                    value="Password"
+                  />
+                </div>
+                <TextInput
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="Enter your password"
+                  required
+                  shadow
+                />
+              </div>
+              <Button
+                id="login-bttn"
+                className="border-[#263238] border-solid border-2 hover:bg-[#263238] font-semibold text-[#263238] hover:text-[#FFFFFF]"
+                type="submit"
+                disabled={disableLogin}
+              >
+                <span className="font-satoshi text-base">Masuk</span>
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default LoginForm;

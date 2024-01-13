@@ -1,8 +1,8 @@
 import prisma from "../lib/prisma";
 import bcrypt from "bcrypt";
-// import ind_kabkota from "./INDKabKota.json";
-import prov_idn from "./provinsi.json";
-import geo_data from "./data-pekerjaan-alumni.json";
+import ind_kabkota from "./INDKabKota.json";
+// import prov_idn from "./provinsi.json";
+import geo_data from "./Data-pekerjaan-alumni.json";
 import { Prisma } from "@prisma/client";
 
 interface GeoDataInput {
@@ -10,6 +10,7 @@ interface GeoDataInput {
   instansi_bekerja: String;
   Alamat: String;
   provinsi: String;
+  Kab_kota: String;
   latitude: Number;
   longitude: Number;
   posisi_bekerja: String;
@@ -30,11 +31,11 @@ interface GeoLocInput {
  * @returns
  */
 function indjson() {
-  const { features } = prov_idn;
-  const ind = features.map((item) => {
+  const {features} = ind_kabkota as any;
+  const ind = features.map((item:any) => {
     const temp: GeoLocInput = {
-      geoId: Number(item.properties.prov_id),
-      name: item.properties.name,
+      geoId: Number(item.properties.ID_2),
+      name: item.properties.NAME_2,
       geojs: item,
       geodatas: {
         create: undefined,
@@ -91,6 +92,7 @@ function dataalumnijson() {
       instansi_bekerja: item.instansi_bekerja,
       Alamat: item.Alamat,
       provinsi: item.provinsi,
+      Kab_kota: item.Kab_kota,
       latitude: item.latitude,
       longitude: item.longitude,
       posisi_bekerja: item.posisi_bekerja,
@@ -112,9 +114,9 @@ async function main() {
 
   // Convert to prisma input
   const prismageodata = res as Prisma.GeoDataCreateManyInput[];
-  ind.forEach((element) => {
+  ind.forEach((element:any) => {
     const resfilter = prismageodata.filter(
-      (elem) => elem.provinsi == element.name
+      (elem) => elem.Kab_kota == element.name
     );
     element.geodatas.create = resfilter;
   });
@@ -137,21 +139,12 @@ async function main() {
 
   // Insert Account
   const rand1 = await bcrypt.genSalt(10);
-  const johndoe = await prisma.user.create({
-    data: {
-      email: "johndoe19@email.com",
-      name: "John Doe",
-      password: await bcrypt.hash("johndoe123", rand1),
-      salt: rand1,
-    },
-  });
-  const rand2 = await bcrypt.genSalt(10);
-  const janedoe = await prisma.user.create({
+  const admin = await prisma.user.create({
     data: {
       email: "admin@gmail.com",
       name: "admin",
-      password: await bcrypt.hash("admin123", rand2),
-      salt: rand2,
+      password: await bcrypt.hash("admin123", rand1),
+      salt: rand1,
     },
   });
 

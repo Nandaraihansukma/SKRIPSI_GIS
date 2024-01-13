@@ -12,7 +12,7 @@ function TableData({ data,currentPage }: any) {
                     <Table.HeadCell>Nama</Table.HeadCell>
                     <Table.HeadCell>Instansi Bekerja</Table.HeadCell>
                     <Table.HeadCell>Posisi Bekerja</Table.HeadCell>
-                    <Table.HeadCell>Provinsi</Table.HeadCell>
+                    <Table.HeadCell>Kabupaten/Kota</Table.HeadCell>
                     <Table.HeadCell className='text-center'>Action</Table.HeadCell>
                 </Table.Head>
                 <Table.Body className="divide-y">
@@ -22,7 +22,7 @@ function TableData({ data,currentPage }: any) {
                             <Table.Cell>{item.nama}</Table.Cell>
                             <Table.Cell>{item.instansi_bekerja}</Table.Cell>
                             <Table.Cell>{item.posisi_bekerja}</Table.Cell>
-                            <Table.Cell>{item.provinsi}</Table.Cell>
+                            <Table.Cell>{item.Kab_kota}</Table.Cell>
                             <Table.Cell className='text-center'>
                                 <Link href={"/detaildata?id=" + item.id} className="hover:text-primary inline-block">
                                     <svg

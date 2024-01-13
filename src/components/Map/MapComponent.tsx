@@ -1,13 +1,14 @@
 "use client";
 
 import Loader from "@/components/common/Loader";
-import { MapContainer, TileLayer, GeoJSON, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, GeoJSON, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import MarkerIcon from "leaflet/dist/images/marker-icon.png";
 import "leaflet/dist/leaflet.css";
-import { useEffect, useState } from "react";
+import { Key, useEffect, useState } from "react";
 import { Card } from "flowbite-react";
-import { Dropdown } from "flowbite-react";
+import MarkerClusterGroup from "react-leaflet-cluster";
+// import {addressPoints} from "./Geodatas";
 
 interface Geolocs {
   id: String;
@@ -20,12 +21,13 @@ interface Geolocs {
 }
 interface GeoDatas {
   id: String;
-  npm: Number;
+  npm: number;
   instansi_bekerja: String;
   Alamat: String;
   provinsi: String;
-  latitude: Number;
-  longitude: Number;
+  Kab_kota: String;
+  latitude: number;
+  longitude: number;
   posisi_bekerja: String;
   mulai_bekerja: String | Date;
   besaran_gaji?: String;
@@ -160,24 +162,21 @@ const MapComponent = () => {
 
   const geolocsAPI = async () => {
     try {
-      const res = await fetch(
-        "/api/geoloc",
-        {
-          method: "GET",
-          cache: "no-store",
-          headers: {
-            'Cache-Control': 'no-cache, no-store, must-revalidate', // Atur header cache-control
-          },
-        }
-      );
-  
+      const res = await fetch("/api/geoloc", {
+        method: "GET",
+        cache: "no-store",
+        headers: {
+          "Cache-Control": "no-cache, no-store, must-revalidate", // Atur header cache-control
+        },
+      });
+
       const { data }: { data: Geolocs[] } = await res.json();
       console.log("DATA GEOLOC", data);
       const result = calculate(data);
       setGeolocs(result);
     } catch (error) {
       // Handle error
-      console.error('Error fetching geolocs:', error);
+      console.error("Error fetching geolocs:", error);
     }
   };
 
@@ -203,6 +202,39 @@ const MapComponent = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
+        <MarkerClusterGroup chunkedLoading>
+          {geolocs.map((data, index) =>
+            data.geodatas?.map((item, idx) => (
+              <Marker
+                key={JSON.stringify(item)}
+                position={[item.latitude, item.longitude]}
+                icon={
+                  new L.Icon({
+                    iconUrl: MarkerIcon.src,
+                    iconRetinaUrl: MarkerIcon.src,
+                    iconSize: [25, 41],
+                    iconAnchor: [12.5, 41],
+                    popupAnchor: [0, -41],
+                    // shadowUrl: MarkerShadow.src,
+                    // shadowSize: [41, 41],
+                  })
+                }
+              >
+                <Popup>
+                  <div className="max-w-[240px]">
+                    {item.nama} <br />
+                    {item.instansi_bekerja}
+                    <br />
+                    {item.posisi_bekerja}
+                    <br />
+                  </div>
+                </Popup>
+              </Marker>
+            ))
+          )}
+        </MarkerClusterGroup>
+
         {geolocs?.map((item: Geolocs) => {
           const percent = Math.floor(Math.random() * (80 - 20 + 1) + 20);
           return (
@@ -238,7 +270,7 @@ const MapComponent = () => {
             />
           );
         })}
-      </MapContainer> 
+      </MapContainer>
       <div className="fixed z-1200 flex items-start w-fit">
         <div>
           <Card className="max-w-sm mt-30 fixed top-15 right-0 z-1200 rounded-none">

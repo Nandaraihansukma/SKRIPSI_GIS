@@ -58,7 +58,7 @@ export async function getGeoDataByName(
             },
           },
           {
-            provinsi: {
+            Kab_kota: {
               contains: name,
               mode: "insensitive",
             },
@@ -87,7 +87,7 @@ export async function getGeoDataByName(
             },
           },
           {
-            provinsi: {
+            Kab_kota: {
               contains: name,
               mode: "insensitive",
             },
