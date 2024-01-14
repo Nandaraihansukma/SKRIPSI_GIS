@@ -2,7 +2,7 @@ import prisma from "../lib/prisma";
 import bcrypt from "bcrypt";
 import ind_kabkota from "./INDKabKota.json";
 // import prov_idn from "./provinsi.json";
-import geo_data from "./Data-pekerjaan-alumni.json";
+import geo_data from "./data-pekerjaan-alumni.json";
 import { Prisma } from "@prisma/client";
 
 interface GeoDataInput {

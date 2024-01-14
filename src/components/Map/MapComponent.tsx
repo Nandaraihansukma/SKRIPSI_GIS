@@ -8,7 +8,6 @@ import "leaflet/dist/leaflet.css";
 import { Key, useEffect, useState } from "react";
 import { Card } from "flowbite-react";
 import MarkerClusterGroup from "react-leaflet-cluster";
-// import {addressPoints} from "./Geodatas";
 
 interface Geolocs {
   id: String;
