@@ -63,7 +63,7 @@ export default function RootLayoutComponent({
                                 {/* <!-- ===== Header End ===== --> */}
 
                                 {/* <!-- ===== Main Content Start ===== --> */}
-                                <main className="flex flex-grow ">
+                                <main className="flex flex-grow bg-white ">
                                     {children}
                                 </main>
                                 {status == "unauthenticated" ? (

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
+import { TextInput } from "flowbite-react";
 
 export default function EditForm() {
   const router = useRouter();
@@ -14,10 +15,10 @@ export default function EditForm() {
     instansi_bekerja: "",
     Alamat: "",
     posisi_bekerja: "",
-    mulai_bekerja:"",
-    besaran_gaji:"",
-    kesesuaian:"",
-    informasi_loker:"",
+    mulai_bekerja: "",
+    besaran_gaji: "",
+    kesesuaian: "",
+    informasi_loker: "",
   });
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -39,7 +40,7 @@ export default function EditForm() {
         nama: data.nama,
         npm: data.npm,
         instansi_bekerja: data.instansi_bekerja,
-        Alamat: (formData.Alamat),
+        Alamat: data.Alamat,
         posisi_bekerja: data.posisi_bekerja,
         mulai_bekerja: data.mulai_bekerja,
         besaran_gaji: data.besaran_gaji,
@@ -53,24 +54,24 @@ export default function EditForm() {
     if (param == null) {
       return;
     }
-  
-  const mulaiBekerjaDate = new Date(formData.mulai_bekerja); // Membuat objek Date dari formData.mulai_bekerja
-  const formattedMulaiBekerja = mulaiBekerjaDate.toISOString(); // Mengubahnya menjadi string format datetime
+
+    const mulaiBekerjaDate = new Date(formData.mulai_bekerja); // Membuat objek Date dari formData.mulai_bekerja
+    const formattedMulaiBekerja = mulaiBekerjaDate.toISOString(); // Mengubahnya menjadi string format datetime
 
     const res = await fetch("/api/geodata/update", {
       method: "POST",
       body: JSON.stringify({
         id: param ? param : "",
         data: {
-          nama: (formData.nama),
-          npm: (formData.npm),
-          instansi_bekerja: (formData.instansi_bekerja),
-          Alamat: (formData.Alamat),
-          posisi_bekerja: (formData.posisi_bekerja),
-          mulai_bekerja: (formattedMulaiBekerja),
-          besaran_gaji: (formData.besaran_gaji),
-          kesesuaian: (formData.kesesuaian),
-          informasi_loker: (formData.informasi_loker),
+          nama: formData.nama,
+          npm: formData.npm,
+          instansi_bekerja: formData.instansi_bekerja,
+          Alamat: formData.Alamat,
+          posisi_bekerja: formData.posisi_bekerja,
+          mulai_bekerja: formattedMulaiBekerja,
+          besaran_gaji: formData.besaran_gaji,
+          kesesuaian: formData.kesesuaian,
+          informasi_loker: formData.informasi_loker,
         },
       }),
     });
@@ -97,11 +98,7 @@ export default function EditForm() {
               Edit Data
             </h3>
           </div>
-          <form
-            action= {
-              editGeoData
-            }
-          >
+          <form action={editGeoData}>
             <div className="p-6.5">
               <div className="mb-4.5">
                 <label className="mb-2.5 block text-black dark:text-white">
@@ -125,7 +122,9 @@ export default function EditForm() {
                 </label>
                 <input
                   type="number"
-                  onKeyDown={(e)=>{["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}}
+                  onKeyDown={(e) => {
+                    ["e", "E", "+", "-"].includes(e.key) && e.preventDefault();
+                  }}
                   placeholder="Masukkan npm"
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   value={formData.npm}
@@ -154,6 +153,22 @@ export default function EditForm() {
 
               <div className="mb-4.5">
                 <label className="mb-2.5 block text-black dark:text-white">
+                  Alamat Instansi <span className="text-meta-1">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Masukkan alamat"
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={formData.Alamat}
+                  onChange={({ target }) =>
+                    setFormData({ ...formData, Alamat: target.value })
+                  }
+                  required
+                />
+              </div>
+
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
                   Posisi Bekerja <span className="text-meta-1">*</span>
                 </label>
                 <input
@@ -168,7 +183,98 @@ export default function EditForm() {
                 />
               </div>
 
-              <button type="submit" className="flex justify-center rounded bg-[#263238] p-2 font-medium  text-white">
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
+                  Tanggal Mulai Bekerja <span className="text-meta-1">*</span>
+                </label>
+                <input
+                  type="date"
+                  placeholder="Masukkan tanggal mulai bekerja"
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={new Date(formData.mulai_bekerja).toLocaleString("sv-SE")
+                  .substring(0, 10)}
+                  onChange={({ target }) =>
+                    setFormData({ ...formData, mulai_bekerja: target.value })
+                }
+                  required
+                />
+              </div>
+
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
+                  Besaran Gaji <span className="text-meta-1">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Masukkan besaran gaji"
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={formData.besaran_gaji}
+                  onChange={({ target }) =>
+                    setFormData({ ...formData, besaran_gaji: target.value })
+                  }
+                  required
+                />
+              </div>
+
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
+                  Apakah sesuai dengan harapan sebelum menerima pekerjaan
+                  tersebut <span className="text-meta-1">*</span>
+                </label>
+                <div className="flex space-x-4">
+                  {" "}
+                  {/* Gunakan container flex untuk menampilkan radio button secara horizontal */}
+                  <label className="flex items-center">
+                    <input
+                      type="radio"
+                      name="kesesuaian"
+                      value="Sesuai"
+                      checked={formData.kesesuaian === "Sesuai"}
+                      onChange={() =>
+                        setFormData({ ...formData, kesesuaian: "Sesuai" })
+                      }
+                      className="mr-2"
+                      required
+                    />
+                    Sesuai
+                  </label>
+                  <label className="flex items-center">
+                    <input
+                      type="radio"
+                      name="kesesuaian"
+                      value="Tidak Sesuai"
+                      checked={formData.kesesuaian === "Tidak Sesuai"}
+                      onChange={() =>
+                        setFormData({ ...formData, kesesuaian: "Tidak Sesuai" })
+                      }
+                      className="mr-2"
+                      required
+                    />
+                    Tidak Sesuai
+                  </label>
+                </div>
+              </div>
+
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
+                  Informasi Loker <span className="text-meta-1">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Masukkan informasi loker"
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={formData.informasi_loker}
+                  onChange={({ target }) =>
+                    setFormData({ ...formData, informasi_loker: target.value })
+                  }
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="flex justify-center rounded bg-[#263238] p-2 font-medium  text-white"
+              >
                 Simpan
               </button>
             </div>

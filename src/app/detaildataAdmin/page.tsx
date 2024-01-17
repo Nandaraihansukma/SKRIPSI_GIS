@@ -13,7 +13,7 @@ async function DetailData({
     const { res } = await getGeoDataByID(searchParams.id);
     if (res) {
       return (
-        <div className="block mx-11 mt-6 bg-white">
+        <div className="block mx-8 mt-6 bg-white">
         <Breadcrumb pageName={"Detail Data"} />
         <div className="w-full 2xl:px-30 px-10 bg-white flex items-center sm:items-center sm:justify-between">
           <img

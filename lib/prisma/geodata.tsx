@@ -63,6 +63,12 @@ export async function getGeoDataByName(
               mode: "insensitive",
             },
           },
+          {
+            instansi_bekerja: {
+              contains: name,
+              mode: "insensitive",
+            },
+          },
         ],
       },
       orderBy: [
@@ -88,6 +94,12 @@ export async function getGeoDataByName(
           },
           {
             Kab_kota: {
+              contains: name,
+              mode: "insensitive",
+            },
+          },
+          {
+            instansi_bekerja: {
               contains: name,
               mode: "insensitive",
             },

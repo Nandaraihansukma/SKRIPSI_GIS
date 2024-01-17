@@ -5,9 +5,14 @@ import Loader from "@/components/common/Loader";
 import { Pagination } from "flowbite-react";
 import { useEffect, useState } from "react";
 import WhiteButton from "../Button/WhiteButton";
+import { Button, Modal } from "flowbite-react";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 const TableThree = () => {
   const [loading, setLoading] = useState<boolean>(true);
+  const [item, setItem] = useState<number>(0);
+
+  const [openModal, setOpenModal] = useState(false);
 
   // Fetch Data
   const [geodatas, setGeodatas] = useState({ data: [], count: 0 });
@@ -66,6 +71,7 @@ const TableThree = () => {
     if (res.status == 200) {
       setCurrentFilter({ ...currentFilter, toggle: !currentFilter.toggle });
     }
+    setOpenModal(false)
   };
 
   // Mount
@@ -189,7 +195,7 @@ const TableThree = () => {
                     <tr key={key}>
                       <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                         <p className="text-black dark:text-white">
-                          {(key+1)+(10*(currentFilter.page-1))}
+                          {key + 1 + 10 * (currentFilter.page - 1)}
                         </p>
                       </td>
                       <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
@@ -243,7 +249,7 @@ const TableThree = () => {
                             </svg>
                           </Link>
                           <button
-                            onClick={(e: any) => geodataDelete(item.id)}
+                            onClick={() => {setOpenModal(true); setItem(item.id)}}
                             className="hover:text-primary"
                           >
                             <svg
@@ -262,6 +268,33 @@ const TableThree = () => {
                   ))}
                 </tbody>
               </table>
+              <Modal
+                show={openModal}
+                size="md"
+                onClose={() => setOpenModal(false)}
+                popup
+              >
+                <Modal.Header />
+                <Modal.Body>
+                  <div className="text-center">
+                    <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-gray-400 dark:text-gray-200" />
+                    <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+                      Apakah anda yakin ingin menghapus data ini?
+                    </h3>
+                    <div className="flex justify-center gap-4">
+                      <Button
+                        color="failure"
+                        onClick={(e: any) => {geodataDelete(item.toString())}}
+                      >
+                        Iya
+                      </Button>
+                      <Button color="gray" onClick={() => setOpenModal(false)}>
+                        Tidak
+                      </Button>
+                    </div>
+                  </div>
+                </Modal.Body>
+              </Modal>
               <div className="flex overflow-x-auto sm:justify-end mb-2 mt-2">
                 <Pagination
                   currentPage={currentFilter.page}
