@@ -71,6 +71,7 @@ model GeoData {
     geoloc_id           String      @db.ObjectId
     geoloc              GeoLocation @relation(fields: [geoloc_id], references: [id], onDelete: Cascade)
     npm                 Int
+    tahun               Int
     instansi_bekerja    String
     Alamat              String
     provinsi            String

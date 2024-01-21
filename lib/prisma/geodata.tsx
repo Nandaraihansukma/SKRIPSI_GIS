@@ -69,6 +69,11 @@ export async function getGeoDataByName(
               mode: "insensitive",
             },
           },
+          // {
+          //   tahun: {
+          //     equals: parseInt(name, 10), 
+          //   },
+          // },
         ],
       },
       orderBy: [
@@ -104,6 +109,11 @@ export async function getGeoDataByName(
               mode: "insensitive",
             },
           },
+          // {
+          //   tahun: {
+          //     equals: parseInt(name, 10), 
+          //   },
+          // },
         ],
       },
       orderBy: [
@@ -115,6 +125,45 @@ export async function getGeoDataByName(
     return { res, count };
   } catch (error) {
     return { error };
+  }
+}
+
+// export async function getGeoDataYear() {
+//   try {
+    
+//     const res = await prisma.geoData.findMany({
+//       select: {
+//         tahun: true,
+//       },
+//       distinct: ['tahun'],
+//     });
+//       return { res };
+//   } catch (error) {
+//     console.log(error)
+//       return { error };
+//   }
+// }
+
+export async function getYear() {
+  try {
+      const res = await prisma.geoData.findMany({
+          distinct: ['tahun'],
+          select: {
+            tahun: true,
+          },
+          orderBy: [
+              {
+                  tahun: 'asc',
+              },
+              {
+                  id: 'asc',
+              },
+          ] 
+      })
+
+      return { res };
+  } catch (error) {
+      return { error };
   }
 }
 
@@ -132,6 +181,7 @@ export async function addGeoData(id: string, data: any) {
     });
     return { res };
   } catch (error) {
+    console.log(error)
     return { error };
   }
 }

@@ -8,6 +8,7 @@ import "leaflet/dist/leaflet.css";
 import { Key, useEffect, useState } from "react";
 import { Card } from "flowbite-react";
 import MarkerClusterGroup from "react-leaflet-cluster";
+import { Dropdown } from 'flowbite-react';
 
 interface Geolocs {
   id: String;
@@ -21,6 +22,7 @@ interface Geolocs {
 interface GeoDatas {
   id: String;
   npm: number;
+  tahun: number;
   instansi_bekerja: String;
   Alamat: String;
   provinsi: String;
@@ -44,7 +46,11 @@ const MapComponent = () => {
     upper: 0,
     lower: 0,
   });
-  const [year, setYear] = useState<number>(2013);
+
+  const [year, setYear] = useState<number>(2012);
+  const [yearDD, setYearDD] = useState<any>(null);
+
+
 
   const mean = (data: Geolocs[], calc: { count: number; mean: number }) => {
     let count = 0;
@@ -159,31 +165,77 @@ const MapComponent = () => {
     return result;
   };
 
-  const geolocsAPI = async () => {
-    try {
-      const res = await fetch("/api/geoloc", {
-        method: "GET",
-        cache: "no-store",
-        headers: {
-          "Cache-Control": "no-cache, no-store, must-revalidate", // Atur header cache-control
-        },
-      });
+//   const geolocsAPI = async (tahunDD? : number) => {
+//     const yearDB = await fetch('/api/geodata/year', {
+//       method: "GET",
+//   }).then(async (year_res) => {
+//       const { data: yearjson }: { data: {
+//         tahun: number;
+//     }[] } = await year_res.json() 
+//       const year_q = year.selected;
+//         setYear({...year, yearDD: yearjson });
+//       const res = await fetch('/api/geoloc?' + new URLSearchParams({
+//           year: year_q.toString(),
+//       }), {
+//           method: "GET",
+//       }).then(async (geoloc_res) => {
+//           const { data }: { data: Geolocs[] } = await geoloc_res.json()
+//           if (data.length == 0) {
+//               return
+//           }
+//           const result = calculate(data);
+//           setGeolocs(result);
+//       })
+//   })
+// }
 
-      const { data }: { data: Geolocs[] } = await res.json();
-      console.log("DATA GEOLOC", data);
-      const result = calculate(data);
-      setGeolocs(result);
-    } catch (error) {
-      // Handle error
-      console.error("Error fetching geolocs:", error);
-    }
+  // const geolocsAPI = async () => {
+  //   try {
+  //     const res = await fetch("/api/geoloc", {
+  //       method: "GET",
+  //       cache: "no-store",
+  //       headers: {
+  //         "Cache-Control": "no-cache, no-store, must-revalidate", // Atur header cache-control
+  //       },
+  //     });
+
+  //     const { data }: { data: Geolocs[] } = await res.json();
+  //     console.log("DATA GEOLOC", data);
+  //     const result = calculate(data);
+  //     setGeolocs(result);
+  //   } catch (error) {
+  //     // Handle error
+  //     console.error("Error fetching geolocs:", error);
+  //   }
+  // };
+
+  const geolocsAPI = async () => {
+    const res = await fetch(
+      "/api/geoloc?" +
+        new URLSearchParams({
+          year: year.toString(),
+        }),
+      {
+        method: "GET",
+      }
+    );
+    const yearDD = await fetch("/api/geodata/year", {
+      method: "GET",
+    });
+    const { data }: { data: Geolocs[] } = await res.json();
+    const { data: dataYear }: { data: any } = await yearDD.json();
+    setYearDD(dataYear);
+    const result = calculate(data);
+    setGeolocs(result);
   };
+
 
   useEffect(() => {
     setLoading(true);
     geolocsAPI();
     setTimeout(() => setLoading(false), 1000);
   }, [year]);
+
 
   return (
     <div className="relative flex flex-col items-center h-full">
@@ -251,12 +303,20 @@ const MapComponent = () => {
                   }),
                 });
               }}
+
               onEachFeature={function (feature, layer) {
                 let sumstr = "";
+                
+                // Mengecek apakah item.name adalah string
+                if (typeof item.name === 'string') {
+                  // Mengonversi string ke dalam bentuk array dan melakukan iterasi
+                  item.name.split(',').forEach((elem) => {
+                    sumstr += elem + "<br />";
+                  });
+                }
+              
                 sumstr += String(item._count.geodatas);
-                const popUpContent = `<Popup>
-                                ${sumstr} Alumni
-                            </Popup>`;
+                const popUpContent = `<Popup>${sumstr} Alumni</Popup>`;
                 layer.bindPopup(popUpContent);
               }}
               pathOptions={{
@@ -269,6 +329,7 @@ const MapComponent = () => {
             />
           );
         })}
+        
       </MapContainer>
       <div className="fixed z-1200 flex items-start w-fit">
         <div>
@@ -319,7 +380,7 @@ const MapComponent = () => {
                     </div>
                   </div>
                 </li>
-                <li className="py-1 sm:py-2">
+                {/* <li className="py-1 sm:py-2">
                   <div className="flex items-center space-x-4">
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
@@ -330,7 +391,7 @@ const MapComponent = () => {
                       {calculations.n}
                     </div>
                   </div>
-                </li>
+                </li> */}
                 <li className="py-1 sm:py-2">
                   <div className="flex items-center space-x-4">
                     <div className="min-w-0 flex-1">
@@ -380,6 +441,17 @@ const MapComponent = () => {
                   </div>
                 </li>
               </ul>
+              <div className="justify-self-end">
+                        <Dropdown label="Year" style={{ backgroundColor: "black", color: "white" }} dismissOnClick={false}>
+                        {yearDD?.map((item: any) => {
+                                return (
+                                  <Dropdown.Item key={item} onClick={() => setYear(item.tahun)}>
+                                  {item.tahun}
+                                </Dropdown.Item>
+                                )
+                            })}
+                        </Dropdown>
+                    </div>
             </div>
           </Card>
         </div>

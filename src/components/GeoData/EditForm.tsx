@@ -1,17 +1,30 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
+import Loader from "@/components/common/Loader";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import L from "leaflet";
+import MarkerIcon from "leaflet/dist/images/marker-icon.png";
+import "leaflet/dist/leaflet.css";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
-import { TextInput } from "flowbite-react";
 
 export default function EditForm() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
+  const center = {
+    lat: -3.3675549,
+    lng: 117.1377759,
+  }
+
 
   const [formData, setFormData] = useState({
+    lat: center.lat,
+    lng: center.lng,
     nama: "",
     npm: "",
+    tahun: 0,
+    prov_id: "",
+    provinsi: "None",
+    Kab_kota: "",
     instansi_bekerja: "",
     Alamat: "",
     posisi_bekerja: "",
@@ -21,6 +34,67 @@ export default function EditForm() {
     informasi_loker: "",
   });
   const [loading, setLoading] = useState<boolean>(true);
+  const markerRef = useRef<any>(null);
+  const router = useRouter();
+
+  const searchParams = useSearchParams();
+
+  const DraggableMarker = () => {
+    const eventHandlers = useMemo(
+      () => ({
+        dragend() {
+          const marker = markerRef.current;
+          if (marker != null) {
+            const latlng = marker.getLatLng();
+            setFormData({ ...formData, lat: latlng.lat, lng: latlng.lng });
+          }
+        },
+      }),
+      []
+    );
+
+    return (
+      <Marker
+        draggable={true}
+        eventHandlers={eventHandlers}
+        position={[formData.lat, formData.lng]}
+        ref={markerRef}
+        icon={
+          new L.Icon({
+            iconUrl: MarkerIcon.src,
+            iconRetinaUrl: MarkerIcon.src,
+            iconSize: [25, 41],
+            iconAnchor: [12.5, 41],
+            popupAnchor: [0, -41],
+          })
+        }
+      ></Marker>
+    );
+  };
+
+  const getMarkerGeoComp = async () => {
+    const res = await fetch(
+      "/api/geoloc/findarea?" +
+        new URLSearchParams({
+          lat: formData.lat.toString(),
+          lng: formData.lng.toString(),
+        }),
+      {
+        method: "GET",
+      }
+    );
+    const { data } = await res.json();
+    if (data.length != 0) {
+      setFormData({
+        ...formData,
+        prov_id: data[0]?._id.$oid,
+        Kab_kota: data[0]?.name,
+      });
+    } else {
+      setFormData({ ...formData, prov_id: "", Kab_kota: "None" });
+    }
+  };
+
 
   const geodataAPI = async () => {
     const param = searchParams.get("id");
@@ -37,8 +111,14 @@ export default function EditForm() {
     const { data } = await res.json();
     if (res.status == 200) {
       setFormData({
+        lat: data.latitude,
+        lng: data.longitude,
         nama: data.nama,
         npm: data.npm,
+        tahun: data.tahun,
+        prov_id: data.geoloc_id,
+        provinsi: formData.provinsi,
+        Kab_kota: formData.Kab_kota,
         instansi_bekerja: data.instansi_bekerja,
         Alamat: data.Alamat,
         posisi_bekerja: data.posisi_bekerja,
@@ -63,8 +143,12 @@ export default function EditForm() {
       body: JSON.stringify({
         id: param ? param : "",
         data: {
+          latitude: formData.lat,
+          longitude: formData.lng,
           nama: formData.nama,
           npm: formData.npm,
+          provinsi: formData.provinsi,
+          Kab_kota: formData.Kab_kota,
           instansi_bekerja: formData.instansi_bekerja,
           Alamat: formData.Alamat,
           posisi_bekerja: formData.posisi_bekerja,
@@ -88,6 +172,11 @@ export default function EditForm() {
     setTimeout(() => setLoading(false), 500);
   }, []);
 
+  useEffect(() => {
+    getMarkerGeoComp();
+  }, [formData.lat, formData.lng]);
+
+
   return (
     <div className="grid  w-full gap-9 ">
       <div className="flex flex-col w-full gap-9">
@@ -98,8 +187,64 @@ export default function EditForm() {
               Edit Data
             </h3>
           </div>
+          <div className="h-96">
+            {loading ? (
+              <Loader />
+            ) : (
+              <>
+                <MapContainer
+                  center={[center.lat, center.lng]}
+                  zoom={5}
+                  scrollWheelZoom={true}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                  }}
+                >
+                  <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  />
+                  <DraggableMarker />
+                </MapContainer>
+              </>
+            )}
+          </div>
           <form action={editGeoData}>
             <div className="p-6.5">
+              <div className="mb-4.5">
+                
+              <label className="mb-2.5 block text-black dark:text-white">
+                  Latitude <span className="text-meta-1">*</span>
+                </label>
+                <input
+                  type="number"
+                  onKeyDown={(e) => {
+                    ["e", "E", "+", "-"].includes(e.key) && e.preventDefault();
+                  }}
+                  placeholder="Enter Latitude"
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={formData.lat}
+                  disabled
+                />
+              </div>
+
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
+                  Longitude <span className="text-meta-1">*</span>
+                </label>
+                <input
+                  type="number"
+                  onKeyDown={(e) => {
+                    ["e", "E", "+", "-"].includes(e.key) && e.preventDefault();
+                  }}
+                  placeholder="Enter Longitude"
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={formData.lng}
+                  disabled
+                />
+              </div>
+
               <div className="mb-4.5">
                 <label className="mb-2.5 block text-black dark:text-white">
                   Nama <span className="text-meta-1">*</span>
@@ -134,6 +279,42 @@ export default function EditForm() {
                   required
                 />
               </div>
+
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
+                  Angkatan <span className="text-meta-1">*</span>
+                </label>
+                <input
+                  type="number"
+                  onKeyDown={(e) => {
+                    ["e", "E", "+", "-"].includes(e.key) && e.preventDefault();
+                  }}
+                  placeholder="Masukkan tahun angkatan"
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={formData.tahun}
+                  onChange={({ target }) =>
+                    setFormData({ ...formData, tahun: Number(target.value) })
+                  }
+                  required
+                />
+              </div>
+
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
+                  Kabupaten/Kota <span className="text-meta-1">*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Masukkan kabupaten/kota"
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={formData.Kab_kota}
+                  onChange={({ target }) =>
+                    setFormData({ ...formData, Kab_kota: target.value })
+                  }
+                  disabled
+                />
+              </div>
+
 
               <div className="mb-4.5">
                 <label className="mb-2.5 block text-black dark:text-white">
@@ -191,16 +372,17 @@ export default function EditForm() {
                   type="date"
                   placeholder="Masukkan tanggal mulai bekerja"
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                  value={new Date(formData.mulai_bekerja).toLocaleString("sv-SE")
-                  .substring(0, 10)}
+                  value={new Date(formData.mulai_bekerja)
+                    .toLocaleString("sv-SE")
+                    .substring(0, 10)}
                   onChange={({ target }) =>
                     setFormData({ ...formData, mulai_bekerja: target.value })
-                }
+                  }
                   required
                 />
               </div>
 
-              <div className="mb-4.5">
+              {/* <div className="mb-4.5">
                 <label className="mb-2.5 block text-black dark:text-white">
                   Besaran Gaji <span className="text-meta-1">*</span>
                 </label>
@@ -214,6 +396,33 @@ export default function EditForm() {
                   }
                   required
                 />
+              </div> */}
+
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
+                  Besaran Gaji <span className="text-meta-1">*</span>
+                </label>
+                <select
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={formData.besaran_gaji}
+                  onChange={({ target }) =>
+                    setFormData({ ...formData, besaran_gaji: target.value })
+                  }
+                  required
+                >
+                  <option value="" disabled>
+                    Pilih besaran gaji
+                  </option>
+                  <option value="0 - 5.000.000">0 - 5.000.000</option>
+                  <option value="5.000.000 - 10.000.000">
+                    5.000.000 - 10.000.000
+                  </option>
+                  <option value="10.000.000 - 15.000.000">
+                    10.000.000 - 15.000.000
+                  </option>
+                  <option value="Lainnya">Lainnya</option>
+                  {/* Tambahkan opsi lainnya sesuai dengan besaran gaji yang diperlukan */}
+                </select>
               </div>
 
               <div className="mb-4.5">
@@ -255,7 +464,7 @@ export default function EditForm() {
                 </div>
               </div>
 
-              <div className="mb-4.5">
+              {/* <div className="mb-4.5">
                 <label className="mb-2.5 block text-black dark:text-white">
                   Informasi Loker <span className="text-meta-1">*</span>
                 </label>
@@ -269,6 +478,30 @@ export default function EditForm() {
                   }
                   required
                 />
+              </div> */}
+
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
+                  Informasi Lowongan Kerja{" "}
+                  <span className="text-meta-1">*</span>
+                </label>
+                <select
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={formData.informasi_loker}
+                  onChange={({ target }) =>
+                    setFormData({ ...formData, informasi_loker: target.value })
+                  }
+                  required
+                >
+                  <option value="" disabled>
+                    Pilih informasi lowongan kerja
+                  </option>
+                  <option value="Teman">Teman</option>
+                  <option value="Alumni">Alumni</option>
+                  <option value="Keluarga">Keluarga</option>
+                  <option value="Lainnya">Lainnya</option>
+                  {/* Tambahkan opsi lainnya sesuai kebutuhan */}
+                </select>
               </div>
 
               <button

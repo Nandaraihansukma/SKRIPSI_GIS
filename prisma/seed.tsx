@@ -8,6 +8,7 @@ import { Prisma } from "@prisma/client";
 interface GeoDataInput {
   npm: Number;
   instansi_bekerja: String;
+  tahun: number;
   Alamat: String;
   provinsi: String;
   Kab_kota: String;
@@ -90,6 +91,7 @@ function dataalumnijson() {
     const temp: GeoDataInput = {
       npm: item.npm,
       instansi_bekerja: item.instansi_bekerja,
+      tahun: item.tahun,
       Alamat: item.Alamat,
       provinsi: item.provinsi,
       Kab_kota: item.Kab_kota,

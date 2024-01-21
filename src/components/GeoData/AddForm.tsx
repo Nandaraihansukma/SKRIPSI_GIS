@@ -7,7 +7,6 @@ import MarkerIcon from "leaflet/dist/images/marker-icon.png";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Label, TextInput } from "flowbite-react";
 
 export default function AddForm() {
   const center = {
@@ -20,6 +19,7 @@ export default function AddForm() {
     lng: center.lng,
     nama: "",
     npm: "",
+    tahun: 0,
     prov_id: "",
     provinsi: "None",
     Kab_kota: "",
@@ -105,6 +105,7 @@ export default function AddForm() {
           longitude: formData.lng,
           nama: formData.nama,
           npm: Number(formData.npm),
+          tahun: formData.tahun,
           provinsi: formData.provinsi,
           Kab_kota: formData.Kab_kota,
           instansi_bekerja: formData.instansi_bekerja,
@@ -237,6 +238,47 @@ export default function AddForm() {
 
               <div className="mb-4.5">
                 <label className="mb-2.5 block text-black dark:text-white">
+                  Angkatan <span className="text-meta-1">*</span>
+                </label>
+                <input
+                  type="number"
+                  onKeyDown={(e) => {
+                    ["e", "E", "+", "-"].includes(e.key) && e.preventDefault();
+                  }}
+                  placeholder="Masukkan tahun angkatan"
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={formData.tahun}
+                  onChange={({ target }) =>
+                    setFormData({ ...formData, tahun: Number(target.value) })
+                  }
+                  required
+                />
+              </div>
+
+              {/* <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
+                  Angkatan <span className="text-meta-1">*</span>
+                </label>
+                <input
+                  type="number"
+                  onKeyDown={(e) => {
+                    ["e", "E", "+", "-"].includes(e.key) && e.preventDefault();
+                  }}
+                  placeholder="Masukkan tahun angkatan"
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={formData.tahun || ""} // Menggunakan nilai default jika formData.tahun adalah null atau undefined
+                  onChange={({ target }) =>
+                    setFormData({
+                      ...formData,
+                      tahun: target.value ? parseInt(target.value, 10) : null,
+                    })
+                  }
+                  required
+                />
+              </div> */}
+
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
                   Kabupaten/Kota <span className="text-meta-1">*</span>
                 </label>
                 <input
@@ -310,7 +352,7 @@ export default function AddForm() {
                   value={formData.mulai_bekerja}
                   onChange={({ target }) =>
                     setFormData({ ...formData, mulai_bekerja: target.value })
-                }
+                  }
                   required
                 />
               </div>
@@ -367,7 +409,7 @@ export default function AddForm() {
                 />
               </div> */}
 
-              <div className="mb-4.5">
+              {/* <div className="mb-4.5">
                 <label className="mb-2.5 block text-black dark:text-white">
                   Besaran Gaji <span className="text-meta-1">*</span>
                 </label>
@@ -381,6 +423,33 @@ export default function AddForm() {
                   }
                   required
                 />
+              </div> */}
+
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
+                  Besaran Gaji <span className="text-meta-1">*</span>
+                </label>
+                <select
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={formData.besaran_gaji}
+                  onChange={({ target }) =>
+                    setFormData({ ...formData, besaran_gaji: target.value })
+                  }
+                  required
+                >
+                  <option value="" disabled>
+                    Pilih besaran gaji
+                  </option>
+                  <option value="0 - 5.000.000">0 - 5.000.000</option>
+                  <option value="5.000.000 - 10.000.000">
+                    5.000.000 - 10.000.000
+                  </option>
+                  <option value="10.000.000 - 15.000.000">
+                    10.000.000 - 15.000.000
+                  </option>
+                  <option value="Lainnya">Lainnya</option>
+                  {/* Tambahkan opsi lainnya sesuai dengan besaran gaji yang diperlukan */}
+                </select>
               </div>
 
               {/* <div className="mb-4.5">
@@ -438,9 +507,9 @@ export default function AddForm() {
                 </div>
               </div>
 
-              <div className="mb-4.5">
+              {/* <div className="mb-4.5">
                 <label className="mb-2.5 block text-black dark:text-white">
-                  Informasi Loker <span className="text-meta-1">*</span>
+                  Informasi Lowongan Kerja <span className="text-meta-1">*</span>
                 </label>
                 <input
                   type="text"
@@ -452,6 +521,30 @@ export default function AddForm() {
                   }
                   required
                 />
+              </div> */}
+
+              <div className="mb-4.5">
+                <label className="mb-2.5 block text-black dark:text-white">
+                  Informasi Lowongan Kerja{" "}
+                  <span className="text-meta-1">*</span>
+                </label>
+                <select
+                  className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                  value={formData.informasi_loker}
+                  onChange={({ target }) =>
+                    setFormData({ ...formData, informasi_loker: target.value })
+                  }
+                  required
+                >
+                  <option value="" disabled>
+                    Pilih informasi lowongan kerja
+                  </option>
+                  <option value="Teman">Teman</option>
+                  <option value="Alumni">Alumni</option>
+                  <option value="Keluarga">Keluarga</option>
+                  <option value="Lainnya">Lainnya</option>
+                  {/* Tambahkan opsi lainnya sesuai kebutuhan */}
+                </select>
               </div>
 
               <button
