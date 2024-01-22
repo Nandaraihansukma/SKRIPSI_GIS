@@ -84,4 +84,5 @@ model GeoData {
     kesesuaian          String
     informasi_loker     String
     nama                String
+    image_url           String
 }

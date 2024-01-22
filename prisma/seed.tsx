@@ -2,7 +2,7 @@ import prisma from "../lib/prisma";
 import bcrypt from "bcrypt";
 import ind_kabkota from "./INDKabKota.json";
 // import prov_idn from "./provinsi.json";
-import geo_data from "./data-pekerjaan-alumni.json";
+import geo_data from "./data-pekerjaan-alumni-fix.json";
 import { Prisma } from "@prisma/client";
 
 interface GeoDataInput {
@@ -20,6 +20,7 @@ interface GeoDataInput {
   kesesuaian?: String;
   informasi_loker: String;
   nama: String;
+  image_url: String
 }
 interface GeoLocInput {
   geoId: number;
@@ -103,6 +104,7 @@ function dataalumnijson() {
       kesesuaian: kesesuaian,
       informasi_loker: item.informasi_loker,
       nama: item.nama,
+      image_url: item.image_url,
     };
     return temp;
   });
