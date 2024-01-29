@@ -64,6 +64,9 @@ const MapComponent = () => {
     if (count != 0) {
       calc.count = count;
       calc.mean = sum / count;
+    } else{
+      calc.count = 0;
+      calc.mean = 0;
     }
   };
 
@@ -71,6 +74,9 @@ const MapComponent = () => {
     data: Geolocs[],
     calc: { count: number; mean: number; std: number }
   ) => {
+    if (calc.count <= 1) {
+      calc.std = 0;
+  }
     let sum = 0;
     data.forEach((elem) => {
       if (elem._count.geodatas != 0) {
@@ -392,7 +398,7 @@ const MapComponent = () => {
                     </div>
                   </div>
                 </li> */}
-                <li className="py-1 sm:py-2">
+                {/* <li className="py-1 sm:py-2">
                   <div className="flex items-center space-x-4">
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
@@ -439,7 +445,7 @@ const MapComponent = () => {
                       {calculations.lower}
                     </div>
                   </div>
-                </li>
+                </li> */}
               </ul>
               <div className="justify-self-end">
                         <Dropdown label="Year" style={{ backgroundColor: "black", color: "white" }} dismissOnClick={false}>

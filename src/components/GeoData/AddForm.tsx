@@ -30,6 +30,7 @@ export default function AddForm() {
     besaran_gaji: "",
     kesesuaian: "",
     informasi_loker: "",
+    image_url: "/assets/user.jpeg",
   });
   const [loading, setLoading] = useState<boolean>(true);
   const markerRef = useRef<any>(null);
@@ -115,6 +116,7 @@ export default function AddForm() {
           besaran_gaji: formData.besaran_gaji,
           kesesuaian: formData.kesesuaian,
           informasi_loker: formData.informasi_loker,
+          image_url: formData.image_url,
         },
       }),
     });
