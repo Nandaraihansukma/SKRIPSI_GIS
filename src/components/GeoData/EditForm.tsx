@@ -8,31 +8,10 @@ import MarkerIcon from "leaflet/dist/images/marker-icon.png";
 import "leaflet/dist/leaflet.css";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
+import { GeoData } from "@prisma/client";
 
-export default function EditForm() {
-  const center = {
-    lat: -3.3675549,
-    lng: 117.1377759,
-  }
-
-
-  const [formData, setFormData] = useState({
-    lat: center.lat,
-    lng: center.lng,
-    nama: "",
-    npm: "",
-    tahun: 0,
-    prov_id: "",
-    provinsi: "None",
-    Kab_kota: "",
-    instansi_bekerja: "",
-    Alamat: "",
-    posisi_bekerja: "",
-    mulai_bekerja: "",
-    besaran_gaji: "",
-    kesesuaian: "",
-    informasi_loker: "",
-  });
+export default function EditForm({ geo_data }: { geo_data: GeoData }) {
+  const [formData, setFormData] = useState<GeoData>(geo_data);
   const [loading, setLoading] = useState<boolean>(true);
   const markerRef = useRef<any>(null);
   const router = useRouter();
@@ -46,7 +25,11 @@ export default function EditForm() {
           const marker = markerRef.current;
           if (marker != null) {
             const latlng = marker.getLatLng();
-            setFormData({ ...formData, lat: latlng.lat, lng: latlng.lng });
+            setFormData({
+              ...formData,
+              latitude: latlng.lat,
+              longitude: latlng.lng,
+            });
           }
         },
       }),
@@ -57,7 +40,7 @@ export default function EditForm() {
       <Marker
         draggable={true}
         eventHandlers={eventHandlers}
-        position={[formData.lat, formData.lng]}
+        position={[formData.latitude, formData.longitude]}
         ref={markerRef}
         icon={
           new L.Icon({
@@ -76,8 +59,8 @@ export default function EditForm() {
     const res = await fetch(
       "/api/geoloc/findarea?" +
         new URLSearchParams({
-          lat: formData.lat.toString(),
-          lng: formData.lng.toString(),
+          lat: formData.latitude.toString(),
+          lng: formData.longitude.toString(),
         }),
       {
         method: "GET",
@@ -87,48 +70,47 @@ export default function EditForm() {
     if (data.length != 0) {
       setFormData({
         ...formData,
-        prov_id: data[0]?._id.$oid,
+        geoloc_id: data[0]?._id.$oid,
         Kab_kota: data[0]?.name,
       });
     } else {
-      setFormData({ ...formData, prov_id: "", Kab_kota: "None" });
+      setFormData({ ...formData, geoloc_id: "", Kab_kota: "None" });
     }
   };
 
-
-  const geodataAPI = async () => {
-    const param = searchParams.get("id");
-    const res = await fetch(
-      "/api/geodata/id?" +
-        new URLSearchParams({
-          id: param ? param : "",
-        }),
-      {
-        method: "GET",
-        cache: "no-store",
-      }
-    );
-    const { data } = await res.json();
-    if (res.status == 200) {
-      setFormData({
-        lat: data.latitude,
-        lng: data.longitude,
-        nama: data.nama,
-        npm: data.npm,
-        tahun: data.tahun,
-        prov_id: data.geoloc_id,
-        provinsi: formData.provinsi,
-        Kab_kota: formData.Kab_kota,
-        instansi_bekerja: data.instansi_bekerja,
-        Alamat: data.Alamat,
-        posisi_bekerja: data.posisi_bekerja,
-        mulai_bekerja: data.mulai_bekerja,
-        besaran_gaji: data.besaran_gaji,
-        kesesuaian: data.kesesuaian,
-        informasi_loker: data.informasi_loker,
-      });
-    }
-  };
+  // const geodataAPI = async () => {
+  //   const param = searchParams.get("id");
+  //   const res = await fetch(
+  //     "/api/geodata/id?" +
+  //       new URLSearchParams({
+  //         id: param ? param : "",
+  //       }),
+  //     {
+  //       method: "GET",
+  //       cache: "no-store",
+  //     }
+  //   );
+  //   const { data } = await res.json();
+  //   if (res.status == 200) {
+  //     setFormData({
+  //       lat: data.latitude,
+  //       lng: data.longitude,
+  //       nama: data.nama,
+  //       npm: data.npm,
+  //       tahun: data.tahun,
+  //       prov_id: data.geoloc_id,
+  //       provinsi: formData.provinsi,
+  //       Kab_kota: formData.Kab_kota,
+  //       instansi_bekerja: data.instansi_bekerja,
+  //       Alamat: data.Alamat,
+  //       posisi_bekerja: data.posisi_bekerja,
+  //       mulai_bekerja: data.mulai_bekerja,
+  //       besaran_gaji: data.besaran_gaji,
+  //       kesesuaian: data.kesesuaian,
+  //       informasi_loker: data.informasi_loker,
+  //     });
+  //   }
+  // };
   const editGeoData = async () => {
     const param = searchParams.get("id");
     if (param == null) {
@@ -143,8 +125,8 @@ export default function EditForm() {
       body: JSON.stringify({
         id: param ? param : "",
         data: {
-          latitude: formData.lat,
-          longitude: formData.lng,
+          latitude: formData.latitude,
+          longitude: formData.longitude,
           nama: formData.nama,
           npm: formData.npm,
           provinsi: formData.provinsi,
@@ -168,14 +150,13 @@ export default function EditForm() {
 
   useEffect(() => {
     setLoading(true);
-    geodataAPI();
+    // geodataAPI();
     setTimeout(() => setLoading(false), 500);
   }, []);
 
   useEffect(() => {
     getMarkerGeoComp();
-  }, [formData.lat, formData.lng]);
-
+  }, [formData.latitude, formData.longitude]);
 
   return (
     <div className="grid  w-full gap-9 ">
@@ -193,7 +174,7 @@ export default function EditForm() {
             ) : (
               <>
                 <MapContainer
-                  center={[center.lat, center.lng]}
+                  center={[formData.latitude, formData.longitude]}
                   zoom={5}
                   scrollWheelZoom={true}
                   style={{
@@ -213,8 +194,7 @@ export default function EditForm() {
           <form action={editGeoData}>
             <div className="p-6.5">
               <div className="mb-4.5">
-                
-              <label className="mb-2.5 block text-black dark:text-white">
+                <label className="mb-2.5 block text-black dark:text-white">
                   Latitude <span className="text-meta-1">*</span>
                 </label>
                 <input
@@ -224,7 +204,7 @@ export default function EditForm() {
                   }}
                   placeholder="Enter Latitude"
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                  value={formData.lat}
+                  value={formData.latitude}
                   disabled
                 />
               </div>
@@ -240,7 +220,7 @@ export default function EditForm() {
                   }}
                   placeholder="Enter Longitude"
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                  value={formData.lng}
+                  value={formData.longitude}
                   disabled
                 />
               </div>
@@ -274,7 +254,7 @@ export default function EditForm() {
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   value={formData.npm}
                   onChange={({ target }) =>
-                    setFormData({ ...formData, npm: target.value })
+                    setFormData({ ...formData, npm: Number(target.value) })
                   }
                   required
                 />
@@ -314,7 +294,6 @@ export default function EditForm() {
                   disabled
                 />
               </div>
-
 
               <div className="mb-4.5">
                 <label className="mb-2.5 block text-black dark:text-white">
@@ -375,9 +354,20 @@ export default function EditForm() {
                   value={new Date(formData.mulai_bekerja)
                     .toLocaleString("sv-SE")
                     .substring(0, 10)}
-                  onChange={({ target }) =>
-                    setFormData({ ...formData, mulai_bekerja: target.value })
-                  }
+                  onChange={({ target }) => {
+                    if (
+                      target.value != "" &&
+                      new Date(target.value) > new Date()
+                    ) {
+                      target.value = new Date()
+                        .toLocaleString("sv-SE")
+                        .substring(0, 10);
+                    }
+                    setFormData({
+                      ...formData,
+                      mulai_bekerja: new Date(target.value),
+                    });
+                  }}
                   required
                 />
               </div>

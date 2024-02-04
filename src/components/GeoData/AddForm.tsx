@@ -352,9 +352,17 @@ export default function AddForm() {
                   placeholder="Masukkan tanggal mulai bekerja"
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   value={formData.mulai_bekerja}
-                  onChange={({ target }) =>
-                    setFormData({ ...formData, mulai_bekerja: target.value })
-                  }
+                  onChange={({ target }) => {
+                    if (
+                      target.value != "" &&
+                      new Date(target.value) > new Date()
+                    ) {
+                      target.value = new Date()
+                        .toLocaleString("sv-SE")
+                        .substring(0, 10);
+                    }
+                    setFormData({ ...formData, mulai_bekerja: target.value });
+                  }}
                   required
                 />
               </div>
