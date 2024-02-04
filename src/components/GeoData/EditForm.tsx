@@ -129,6 +129,7 @@ export default function EditForm({ geo_data }: { geo_data: GeoData }) {
           longitude: formData.longitude,
           nama: formData.nama,
           npm: formData.npm,
+          tahun: formData.tahun,
           provinsi: formData.provinsi,
           Kab_kota: formData.Kab_kota,
           instansi_bekerja: formData.instansi_bekerja,
