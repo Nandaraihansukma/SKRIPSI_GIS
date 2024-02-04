@@ -233,13 +233,13 @@ const MapComponent = () => {
     setYearDD(dataYear);
     const result = calculate(data);
     setGeolocs(result);
+    setLoading(false);
   };
 
 
   useEffect(() => {
     setLoading(true);
     geolocsAPI();
-    setTimeout(() => setLoading(false), 1000);
   }, [year]);
 
 

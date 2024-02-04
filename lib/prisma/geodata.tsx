@@ -7,12 +7,12 @@ export async function getGeoDatas(take: number, page: number) {
       take: take,
       orderBy: [
         {
-            nama: 'asc',
+          nama: "asc",
         },
         {
-            id: 'asc',
+          id: "asc",
         },
-    ]
+      ],
     });
     const count = await prisma.geoData.count();
     return { res, count };
@@ -71,7 +71,7 @@ export async function getGeoDataByName(
           },
           // {
           //   tahun: {
-          //     equals: parseInt(name, 10), 
+          //     equals: parseInt(name, 10),
           //   },
           // },
         ],
@@ -111,7 +111,7 @@ export async function getGeoDataByName(
           },
           // {
           //   tahun: {
-          //     equals: parseInt(name, 10), 
+          //     equals: parseInt(name, 10),
           //   },
           // },
         ],
@@ -120,7 +120,7 @@ export async function getGeoDataByName(
         {
           id: "asc",
         },
-      ]
+      ],
     });
     return { res, count };
   } catch (error) {
@@ -130,7 +130,7 @@ export async function getGeoDataByName(
 
 // export async function getGeoDataYear() {
 //   try {
-    
+
 //     const res = await prisma.geoData.findMany({
 //       select: {
 //         tahun: true,
@@ -146,24 +146,18 @@ export async function getGeoDataByName(
 
 export async function getYear() {
   try {
-      const res = await prisma.geoData.findMany({
-          distinct: ['tahun'],
-          select: {
-            tahun: true,
-          },
-          orderBy: [
-              {
-                  tahun: 'asc',
-              },
-              {
-                  id: 'asc',
-              },
-          ] 
-      })
+    const res = await prisma.geoData.groupBy({
+      by: ["tahun"],
+      orderBy: [
+        {
+          tahun: "asc",
+        },
+      ],
+    });
 
-      return { res };
+    return { res };
   } catch (error) {
-      return { error };
+    return { error };
   }
 }
 
@@ -181,7 +175,7 @@ export async function addGeoData(id: string, data: any) {
     });
     return { res };
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return { error };
   }
 }
