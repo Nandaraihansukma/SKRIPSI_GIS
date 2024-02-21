@@ -6,7 +6,8 @@ export async function GET(request: NextRequest) {
         const filter = String(request.nextUrl.searchParams.get('filter') != undefined ? request.nextUrl.searchParams.get('filter') : "");
         const take = Number(request.nextUrl.searchParams.get('take') != undefined ? request.nextUrl.searchParams.get('take') : 10);
         const page = Number(request.nextUrl.searchParams.get('page') != undefined ? request.nextUrl.searchParams.get('page') : 1);
-        const { res: data, count: count, error: geosearcherr } = await getGeoDataByName(filter, take, page);
+        const year = Number(request.nextUrl.searchParams.get('year') != undefined ? request.nextUrl.searchParams.get('year') : 0);
+        const { res: data, count: count, error: geosearcherr } = await getGeoDataByName(filter, take, page, year);
         if (geosearcherr) {
             return Response.json({ message: "internal server error" }, { status: 500 });
         }

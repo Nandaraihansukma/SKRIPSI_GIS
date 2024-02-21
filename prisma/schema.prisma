@@ -67,22 +67,23 @@ model GeoLocation {
 }
 
 model GeoData {
-    id                  String      @id @default(auto()) @map("_id") @db.ObjectId
-    geoloc_id           String      @db.ObjectId
-    geoloc              GeoLocation @relation(fields: [geoloc_id], references: [id], onDelete: Cascade)
-    npm                 Int
-    tahun               Int
-    instansi_bekerja    String
-    Alamat              String
-    provinsi            String
-    Kab_kota            String
-    latitude            Float
-    longitude           Float
-    posisi_bekerja      String
-    mulai_bekerja       DateTime
-    besaran_gaji        String
-    kesesuaian          String
-    informasi_loker     String
-    nama                String
-    image_url           String
+    id               String      @id @default(auto()) @map("_id") @db.ObjectId
+    geoloc_id        String      @db.ObjectId
+    geoloc           GeoLocation @relation(fields: [geoloc_id], references: [id], onDelete: Cascade)
+    npm              Int
+    tahun            Int
+    instansi_bekerja String
+    Alamat           String
+    Kontak_line      String
+    provinsi         String
+    Kab_kota         String
+    latitude         Float
+    longitude        Float
+    posisi_bekerja   String
+    mulai_bekerja    DateTime
+    besaran_gaji     String
+    kesesuaian       String
+    informasi_loker  String
+    nama             String
+    image_url        String
 }
